@@ -37,9 +37,9 @@ galaxy_info:
   # https://galaxy.ansible.com/api/v1/platforms/
   #
   platforms:
-   - name: EL
+   - name: Ubuntu
      versions:
-     - 7
+     - bionic
   #   - 25
   # - name: SomePlatform
   #   versions:
