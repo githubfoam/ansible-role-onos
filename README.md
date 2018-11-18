@@ -5,8 +5,7 @@ A brief description of the role goes here.
 TravisCI master branch status
 [![Build Status](https://travis-ci.com/githubfoam/ansible-role-onos.svg?branch=master)](https://travis-ci.com/githubfoam/ansible-role-onos)
 
-![Ansible Role](https://img.shields.io/ansible/onos/d/:32881.svg)
-![Ansible Role](https://img.shields.io/ansible/onos/d/:32881.svg?style=flat-square)
+[![Ansible Role](https://img.shields.io/ansible/onos/:32881.svg?style=plastic)](https://galaxy.ansible.com/githubfoam/onos/)
 Requirements
 ------------
 
