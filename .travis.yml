@@ -18,7 +18,7 @@ before_install:
 script:
   # Create a random file to store the container ID.
   - container_id=$(mktemp)
-  - role_name="ansible-role-apache2"
+  - role_name="ansible-role-onos"
   # Run container in detached state
   - 'sudo docker run --detach --volume="${PWD}":/etc/ansible/roles/${role_name}:ro ${run_opts} ${distribution}-${version}:ansible "${init}" > "${container_id}" '
   # Ansible syntax check.
