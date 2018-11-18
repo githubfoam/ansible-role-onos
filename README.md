@@ -2,7 +2,8 @@ Role Name
 =========
 
 A brief description of the role goes here.
-
+TravisCI travis branch status
+[![Build Status](https://travis-ci.com/githubfoam/ansible-role-onos.svg?branch=travis)](https://travis-ci.com/githubfoam/ansible-role-onos)
 Requirements
 ------------
 
