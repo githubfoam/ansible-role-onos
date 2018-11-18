@@ -1,2 +1,7 @@
 ---
-# tasks file for ansible-role-onos
+
+- name: tasks file for ansible-role-onos
+  include_tasks: "{{ ansible_os_family }}-install.yml"
+
+- name: configure onos.
+  include_tasks: "configure-{{ ansible_os_family }}.yml"
