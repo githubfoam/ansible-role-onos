@@ -1,2 +1,7 @@
 ---
 # vars file for ansible-role-onos
+
+- import_tasks: RedHat-firewall.yml
+  when: firewall_disable_firewalld
+- import_tasks: Debian-firewall.yml
+  when: firewall_disable_ufw
