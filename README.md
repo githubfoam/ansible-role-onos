@@ -5,8 +5,9 @@ A brief description of the role goes here.
 TravisCI master branch status
 [![Build Status](https://travis-ci.com/githubfoam/ansible-role-onos.svg?branch=master)](https://travis-ci.com/githubfoam/ansible-role-onos)
 
-[![Ansible Role](https://img.shields.io/ansible/onos/:32881.svg?style=plastic)](https://galaxy.ansible.com/githubfoam/onos/)
+
 Requirements
+[![Travis (.org)](https://img.shields.io/travis/:user/:repo.svg)](https://github.com/githubfoam/ansible-role-onos)
 ------------
 
 Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
