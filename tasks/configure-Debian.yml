@@ -2,3 +2,7 @@
 - name: Add sdn user
   user:
       name: sdn
+- name: Disable the firewall
+  systemd:
+      name:  ufw
+      state: stopped

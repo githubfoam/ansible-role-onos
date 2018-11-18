@@ -2,3 +2,48 @@
 # tasks file for apache
 - name: Update apt cache.
   apt: update_cache=yes
+- name: Update repositories cache and install `software-properties-common` package
+  apt:
+    name: software-properties-common
+    update_cache: yes
+- name: Add Oracle Java 1.8 repos
+  command: add-apt-repository ppa:webupd8team/java
+- name: Run the equivalent of "apt-get update" as a separate step
+  apt:
+    update_cache: yes
+- name: Execute the command in remote shell; Install Oracle Java 1.8
+  shell: echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | sudo debconf-set-selections
+- name: Install Oracle Java 1.8
+  apt:
+    name: "{{ packages }}"
+  vars:
+        packages:
+        - oracle-java8-installer
+        - oracle-java8-set-default
+        - curl
+        state: latest
+        autoclean: yes
+- name: Unarchive a file that needs to be downloaded (added in 2.0)
+  unarchive:
+        src: http://repo1.maven.org/maven2/org/onosproject/onos-releases/onos-1.12.0/onos-1.12.0.tar.gz
+        dest: /opt/
+        remote_src: yes
+- name: Rename the extracted directory to "onos"
+  command: mv onos-1.12.0 onos
+  args:
+        chdir: /opt/
+- name: Mandatory step for all OSes /etc/init.d/onos
+  command: sudo cp /opt/onos/init/onos.initd /etc/init.d/onos
+- name: Additional steps for Systemd based systems  Ubuntu 16, CentOS 7+
+  command: sudo cp /opt/onos/init/onos.service /etc/systemd/system/
+- name: Running systemctl daemon-reload
+  command: sudo systemctl daemon-reload
+- name: Running sudo systemctl enable onos
+  command: sudo systemctl daemon-reload
+- name: Running sudo systemctl start onos
+  command: sudo systemctl start onos
+- name: Wait for port 8181 to become open on the host, verify the access to the ONOS GUI from a browser
+  wait_for:
+      port: 8181
+      delay: 25
+      state: started
