@@ -25,7 +25,7 @@ Command:
 License
 -------
 
-BSD
+GNU General Public License v3.0
 
 Author Information
 ------------------
