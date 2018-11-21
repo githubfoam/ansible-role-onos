@@ -11,14 +11,16 @@ Playbook
 ----------------
 
 
-File:  
+File:
+
     - hosts: servers
       roles:
-         - { role: githubfoam.onos }
-
+         - { role: githubfoam.openvswitch, x: 42 }
 
 Command:
-    - $ ansible-galaxy install --roles-path . githubfoam.onos
+
+             - $ ansible-galaxy install --roles-path . githubfoam.onos
+
 
 License
 -------
