@@ -11,7 +11,7 @@ Playbook
 ----------------
 
 
-File:
+File:  
     - hosts: servers
       roles:
          - { role: githubfoam.onos }
