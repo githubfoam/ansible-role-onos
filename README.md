@@ -11,10 +11,14 @@ Playbook
 ----------------
 
 
-
+File:
     - hosts: servers
       roles:
-         - { role: githubfoam.onos, x: 42 }
+         - { role: githubfoam.onos }
+
+
+Command:
+    - $ ansible-galaxy install --roles-path . githubfoam.onos
 
 License
 -------
