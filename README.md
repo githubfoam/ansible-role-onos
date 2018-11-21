@@ -15,7 +15,7 @@ File:
 
     - hosts: servers
       roles:
-         - { role: githubfoam.openvswitch, x: 42 }
+         - { role: githubfoam.onos }
 
 Command:
 
