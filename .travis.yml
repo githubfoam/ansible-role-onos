@@ -20,6 +20,7 @@ script:
   - container_id=$(mktemp)
   - role_name="ansible-role-onos"
   - docker images
+  - 'sudo docker exec "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=true apt install software-properties-common'
   # Run container in detached state
   - 'sudo docker run --detach --volume="${PWD}":/etc/ansible/roles/${role_name}:ro ${run_opts} ${distribution}:${version}:ansible "${init}" > "${container_id}" '
   # Ansible syntax check.
