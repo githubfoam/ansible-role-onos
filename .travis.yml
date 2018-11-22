@@ -19,20 +19,17 @@ script:
   # Create a random file to store the container ID.
   - container_id=$(mktemp)
   - role_name="ansible-role-onos"
-  # Run container in detached state
+  # Run container in detached state, official ubuntu docker image
   -  sudo docker run -t -d ${run_opts} ${distribution}:${version} > "${container_id}"
-  #- 'sudo docker run --detach --volume="${PWD}":/etc/ansible/roles/${role_name}:ro ${run_opts} ${distribution}:${version} "${init}" > "${container_id}" '
   # Install ansible on the same container via container_id
   - sudo docker exec "$(cat ${container_id})" apt-get update
   - sudo docker exec "$(cat ${container_id})" apt-get install software-properties-common -y
   - sudo docker exec "$(cat ${container_id})" apt-add-repository --yes --update ppa:ansible/ansible
   - sudo docker exec "$(cat ${container_id})" apt-get install ansible -y
   - sudo docker exec "$(cat ${container_id})" mkdir /etc/ansible/roles/${role_name}
-  - echo "$PWD"
   - sudo docker cp "${PWD}/." "$(cat ${container_id})":/etc/ansible/roles/${role_name}
-  - sudo docker exec "$(cat ${container_id})" ls -l /etc/ansible/roles
-  - sudo docker exec "$(cat ${container_id})" ls -l /etc/ansible/roles/${role_name}
-  - sudo docker exec "$(cat ${container_id})" ls -l /etc/ansible/roles/${role_name}/tests
+  # Install systemd
+  - sudo docker exec "$(cat ${container_id})" apt-get install systemd -y
   # Ansible syntax check.
   - 'sudo docker exec "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=true ansible-playbook -v /etc/ansible/roles/${role_name}/tests/test.yml --syntax-check'
   # Test role.
