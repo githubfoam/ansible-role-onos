@@ -13,8 +13,8 @@ services:
 
 
 before_install:
-   - 'sudo docker build --rm=true --file=tests/dockerfiles/Dockerfile.${distribution}-${version} --tag=${distribution}-${version}:ansible tests '
-
+   #- 'sudo docker build --rm=true --file=tests/dockerfiles/Dockerfile.${distribution}-${version} --tag=${distribution}-${version}:ansible tests '
+   - 'sudo docker pull ${distribution}:${version}'
 script:
   # Create a random file to store the container ID.
   - container_id=$(mktemp)
