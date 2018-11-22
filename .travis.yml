@@ -39,7 +39,7 @@ jobs:
         - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         - export DOCKER_REPO=$DOCKER_USERNAME/onos
         - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
-        - docker build -f Dockerfile.centos-7 -t $DOCKER_REPO:$COMMIT .
+        - docker build -f Dockerfile.ubuntu-1804 -t $DOCKER_REPO:$COMMIT .
         - docker tag $DOCKER_REPO:$COMMIT $DOCKER_REPO:$TAG
         - docker tag $DOCKER_REPO:$COMMIT $DOCKER_REPO:travis-$TRAVIS_BUILD_NUMBER
         - docker push $DOCKER_REPO
