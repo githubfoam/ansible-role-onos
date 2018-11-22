@@ -17,7 +17,7 @@ jobs:
     - stage: build docker image
       script:
         # Create a random file to store the container ID.
-        #- container_id=$(mktemp)
+        - container_id=$(mktemp)
         - role_name="ansible-role-onos"
         # Run container in detached state, official ubuntu docker image
         -  sudo docker run -t -d ${run_opts} ${distribution}:${version} > "${container_id}"
