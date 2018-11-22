@@ -3,7 +3,7 @@ onos
 
 
 TravisCI master branch status  
-[![Build Status](https://travis-ci.com/githubfoam/ansible-role-onos.svg?branch=master)](https://travis-ci.com/githubfoam/ansible-role-onos)
+[![Build Status](https://travis-ci.com/githubfoam/ansible-role-onos.svg?branch=ubuntu-18.04)](https://travis-ci.com/githubfoam/ansible-role-onos)
 
 ----------------
 
