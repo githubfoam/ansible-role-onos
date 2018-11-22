@@ -22,7 +22,8 @@ script:
   - docker images
   # Run container in detached state
   - 'sudo docker run --detach --volume="${PWD}":/etc/ansible/roles/${role_name}:ro ${run_opts} ${distribution}:${version}:ansible "${init}" > "${container_id}" '
-  - 'sudo docker exec -d "$(cat ${container_id})" apt-get install software-properties-common'
+  # Install ansible on the same container via container_id
+  - sudo docker exec "$(cat ${container_id})" apt-get update
   # Ansible syntax check.
   - 'sudo docker exec "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=true ansible-playbook -v /etc/ansible/roles/${role_name}/tests/test.yml --syntax-check'
 
