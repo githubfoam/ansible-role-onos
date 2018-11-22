@@ -4,7 +4,6 @@ sudo: required
 env:
    -  distribution=ubuntu
       version=18.04
-   - container_id=$(mktemp) 
 
 services:
   - docker
@@ -18,12 +17,10 @@ jobs:
     - stage: build docker image
       script:
         # Create a random file to store the container ID.
-        - container_id=$(mktemp)
+        #- container_id=$(mktemp)
         - role_name="ansible-role-onos"
         # Run container in detached state, official ubuntu docker image
         -  sudo docker run -t -d ${run_opts} ${distribution}:${version} > "${container_id}"
-    - stage: Install ansible on container
-      script:
         # Install ansible on the same container via container_id
         - sudo docker exec "$(cat ${container_id})" apt-get update
         - sudo docker exec "$(cat ${container_id})" apt-get install software-properties-common -y
@@ -31,8 +28,6 @@ jobs:
         - sudo docker exec "$(cat ${container_id})" apt-get install ansible -y
         - sudo docker exec "$(cat ${container_id})" mkdir /etc/ansible/roles/${role_name}
         - sudo docker cp "${PWD}/." "$(cat ${container_id})":/etc/ansible/roles/${role_name}
-    - stage: test ansible role
-      script:
         # Ansible syntax check.
         - 'sudo docker exec "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=true ansible-playbook -v /etc/ansible/roles/${role_name}/tests/test.yml --syntax-check'
         # Test role.
