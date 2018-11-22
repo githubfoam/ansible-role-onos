@@ -19,6 +19,7 @@ jobs:
         # Create a random file to store the container ID.
         - container_id=$(mktemp)
         - role_name="ansible-role-onos"
+        - bash somescript.sh
         # Run container in detached state, official ubuntu docker image
         -  sudo docker run -t -d ${run_opts} ${distribution}:${version} > "${container_id}"
         # Install ansible on the same container via container_id
@@ -35,13 +36,13 @@ jobs:
         # Notify Ansible Galaxy when an ansible role builds successfully.
     - stage: push docker image
       script:
-      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-      - export DOCKER_REPO=$DOCKER_USERNAME/onos
-      - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
-      - docker build -f Dockerfile.centos-7 -t $DOCKER_REPO:$COMMIT .
-      - docker tag $DOCKER_REPO:$COMMIT $DOCKER_REPO:$TAG
-      - docker tag $DOCKER_REPO:$COMMIT $DOCKER_REPO:travis-$TRAVIS_BUILD_NUMBER
-      - docker push $DOCKER_REPO
+        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        - export DOCKER_REPO=$DOCKER_USERNAME/onos
+        - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
+        - docker build -f Dockerfile.centos-7 -t $DOCKER_REPO:$COMMIT .
+        - docker tag $DOCKER_REPO:$COMMIT $DOCKER_REPO:$TAG
+        - docker tag $DOCKER_REPO:$COMMIT $DOCKER_REPO:travis-$TRAVIS_BUILD_NUMBER
+        - docker push $DOCKER_REPO
 notifications:
   email: false
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
