@@ -40,7 +40,7 @@ jobs:
         - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         - export DOCKER_REPO=$DOCKER_USERNAME/onos
         - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "ubuntu-18.04"; else echo $TRAVIS_BRANCH ; fi`
-        - docker build -f --file=tests/dockerfiles/Dockerfile.${distribution}-${version}Dockerfile.ubuntu-1804 -t $DOCKER_REPO:$COMMIT .
+        - docker build --file=tests/dockerfiles/Dockerfile.${distribution}-${version} -t $DOCKER_REPO:$COMMIT .
         - docker tag $DOCKER_REPO:$COMMIT $DOCKER_REPO:$TAG
         - docker tag $DOCKER_REPO:$COMMIT $DOCKER_REPO:travis-$TRAVIS_BUILD_NUMBER
         - docker push $DOCKER_REPO
