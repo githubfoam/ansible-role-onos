@@ -27,8 +27,8 @@ script:
   - sudo docker exec "$(cat ${container_id})" apt-get install software-properties-common -y
   - sudo docker exec "$(cat ${container_id})" apt-add-repository --yes --update ppa:ansible/ansible
   - sudo docker exec "$(cat ${container_id})" apt-get install ansible -y
-  - echo "../$PWD"
-  - sudo docker cp ../"${PWD}"/${role_name} "$(cat ${container_id})":/etc/ansible/roles/
+  - echo "./$PWD"
+  - sudo docker cp ./"${PWD}"/${role_name} "$(cat ${container_id})":/etc/ansible/roles/
   # Ansible syntax check.
   - 'sudo docker exec "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=true ansible-playbook -v /etc/ansible/roles/${role_name}/tests/test.yml --syntax-check'
   # Test role.
