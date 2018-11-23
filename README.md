@@ -4,6 +4,7 @@ onos
 
 TravisCI ubuntu-18.04 branch status  
 [![Build Status](https://travis-ci.com/githubfoam/ansible-role-onos.svg?branch=ubuntu-18.04)](https://travis-ci.com/githubfoam/ansible-role-onos)
+[![Docker Build Status](https://img.shields.io/docker/build/:user/:repo.svg)](https://hub.docker.com/r/dockerfoam/onos/)
 
 ----------------
 
