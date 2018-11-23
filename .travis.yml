@@ -16,7 +16,7 @@ before_install:
    - 'sudo docker pull ${distribution}:${version} '
 jobs:
   include:
-    - stage: build docker image
+    - stage: build docker image - CI step
       script:
         # Create a random file to store the container ID.
         - container_id=$(mktemp)
@@ -38,7 +38,7 @@ jobs:
         # Notify Ansible Galaxy when an ansible role builds successfully.
     # - stage: push docker image
     #   script:
-    #     # user/pass must be entered travis website -> repository -> settings -> environment variable
+    #     # DOCKER_USERNAME DOCKER_PASSWORD  must be entered travis website -> repository -> settings -> environment variables
     #     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
     #     - export DOCKER_REPO=$DOCKER_USERNAME/onos
     #     - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "${distribution}-${version}"; else echo $TRAVIS_BRANCH ; fi`
@@ -46,8 +46,9 @@ jobs:
     #     - docker tag $DOCKER_REPO:$COMMIT $DOCKER_REPO:$TAG
     #     - docker tag $DOCKER_REPO:$COMMIT $DOCKER_REPO:travis-$TRAVIS_BUILD_NUMBER
     #     - docker push $DOCKER_REPO
-    - stage: Trigger by Source branch named staging
+    - stage: push built over docker hub / docker cloud - CD step
       script:
+        # DODCKER_TOKEN ADDED must be entered travis website -> repository -> settings -> environment variables
         - curl https://registry.hub.docker.com/u/dockerfoam/onos/trigger/$DOCKER_TOKEN/
 notifications:
   email: false
