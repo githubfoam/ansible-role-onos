@@ -48,7 +48,7 @@ jobs:
     #     - docker push $DOCKER_REPO
     - stage: Trigger by Source branch named staging
       script:
-        - curl https://registry.hub.docker.com/u/dockerfoam/onos/trigger/"$(DOCKER_TOKEN)"/
+        - curl https://registry.hub.docker.com/u/dockerfoam/onos/trigger/$DOCKER_TOKEN/
 notifications:
   email: false
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
