@@ -1,8 +1,8 @@
 onos
 =========
 
-[![Ansible Role](https://img.shields.io/ansible/role/d/32881.svg?style=plastic)](https://galaxy.ansible.com/githubfoam/onos)  
-[![Ansible Role](https://img.shields.io/ansible/role/32881.svg)](https://galaxy.ansible.com/githubfoam/onos)   
+Ansible Role:[![Ansible Role](https://img.shields.io/ansible/role/d/32881.svg?style=plastic)](https://galaxy.ansible.com/githubfoam/onos)  
+Ansible Role:[![Ansible Role](https://img.shields.io/ansible/role/32881.svg)](https://galaxy.ansible.com/githubfoam/onos)   
 
 Travis (.com) branch:  
 [![Build Status](https://travis-ci.com/githubfoam/ansible-role-onos.svg?branch=badges)](https://travis-ci.com/githubfoam/ansible-role-onos)  
