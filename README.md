@@ -2,19 +2,8 @@ onos
 =========
 
 
-[![Travis (.com)](https://img.shields.io/travis/com/githubfoam/ansible-role-onos.svg)](https://travis-ci.com/githubfoam/ansible-role-onos/)    
-[![Travis (.com) branch](https://img.shields.io/travis/com/githubfoam/ansible-role-onos/master.svg?style=plastic)](https://travis-ci.com/githubfoam/ansible-role-onos/)  
-[![Travis (.com) branch](https://img.shields.io/travis/com/githubfoam/ansible-role-onos/ubuntu-18.04.svg?style=plastic)](https://travis-ci.com/githubfoam/ansible-role-onos/)
-
-[![Docker Automated build](https://img.shields.io/docker/automated/dockerfoam/onos.svg?style=plastic)](https://hub.docker.com/r/dockerfoam/onos/)  
-[![Docker Pulls](https://img.shields.io/docker/pulls/dockerfoam/onos.svg?style=plastic)](https://hub.docker.com/r/dockerfoam/onos/)  
-[![Docker Stars](https://img.shields.io/docker/stars/dockerfoam/onos.svg?style=plastic)](https://hub.docker.com/r/dockerfoam/onos/)  
-
-
-
-[![Ansible Role](https://img.shields.io/ansible/role/d/32881.svg?style=plastic)](https://galaxy.ansible.com/githubfoam/onos)  
-[![Ansible Role](https://img.shields.io/ansible/role/32881.svg)](https://galaxy.ansible.com/githubfoam/onos)
-
+TravisCI master branch status  
+[![Build Status](https://travis-ci.com/githubfoam/ansible-role-onos.svg?branch=master)](https://travis-ci.com/githubfoam/ansible-role-onos)
 
 ----------------
 
