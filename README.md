@@ -1,10 +1,10 @@
 onos
 =========
 
-Ansible Role:[![Ansible Role](https://img.shields.io/ansible/role/d/32881.svg?style=plastic)](https://galaxy.ansible.com/githubfoam/onos)  
-Ansible Role:[![Ansible Role](https://img.shields.io/ansible/role/32881.svg)](https://galaxy.ansible.com/githubfoam/onos)   
+Ansible Role: [![Ansible Role](https://img.shields.io/ansible/role/d/32881.svg?style=plastic)](https://galaxy.ansible.com/githubfoam/onos)  
+Ansible Role: [![Ansible Role](https://img.shields.io/ansible/role/32881.svg)](https://galaxy.ansible.com/githubfoam/onos)   
 
-Travis (.com) branch:  
+Travis (.com) branch: 
 [![Build Status](https://travis-ci.com/githubfoam/ansible-role-onos.svg?branch=badges)](https://travis-ci.com/githubfoam/ansible-role-onos)  
 
 [![Docker Automated build](https://img.shields.io/docker/automated/dockerfoam/onos.svg?style=plastic)](https://hub.docker.com/r/dockerfoam/onos/)  
