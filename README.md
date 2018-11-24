@@ -11,7 +11,8 @@ Travis (.com) branch:
 [![Docker Pulls](https://img.shields.io/docker/pulls/dockerfoam/onos.svg?style=plastic)](https://hub.docker.com/r/dockerfoam/onos/)  
 [![Docker Stars](https://img.shields.io/docker/stars/dockerfoam/onos.svg?style=plastic)](https://hub.docker.com/r/dockerfoam/onos/)
 
-[![GitHub search hit counter](https://img.shields.io/github/search/githubfoam/ansible-role-onos/goto.svg)](https://github.com/githubfoam/ansible-role-onos)
+[![GitHub search hit counter](https://img.shields.io/github/search/githubfoam/ansible-role-onos/goto.svg)](https://github.com/githubfoam/ansible-role-onos)  
+[![GitHub](https://img.shields.io/github/license/githubfoam/ansible-role-onos.svg?style=plastic)](https://github.com/githubfoam/ansible-role-onos)
 
 ----------------
 
