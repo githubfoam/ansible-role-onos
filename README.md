@@ -6,6 +6,11 @@ Ansible Role: [![Ansible Role](https://img.shields.io/ansible/role/32881.svg)](h
 
 Travis (.com) branch:
 [![Build Status](https://travis-ci.com/githubfoam/ansible-role-onos.svg?branch=badges)](https://travis-ci.com/githubfoam/ansible-role-onos)  
+Travis (.com) test branch:
+[![Build Status](https://travis-ci.com/githubfoam/ansible-role-onos.svg?branch=test)](https://travis-ci.com/githubfoam/ansible-role-onos)  
+Travis (.com) dev branch:
+[![Build Status](https://travis-ci.com/githubfoam/ansible-role-onos.svg?branch=dev)](https://travis-ci.com/githubfoam/ansible-role-onos)  
+
 
 [![Docker Automated build](https://img.shields.io/docker/automated/dockerfoam/onos.svg?style=plastic)](https://hub.docker.com/r/dockerfoam/onos/)  
 [![Docker Pulls](https://img.shields.io/docker/pulls/dockerfoam/onos.svg?style=plastic)](https://hub.docker.com/r/dockerfoam/onos/)  
