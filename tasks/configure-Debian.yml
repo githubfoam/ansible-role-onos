@@ -2,10 +2,6 @@
 - name: Add sdn user
   user:
       name: sdn
-# - name: Disable the firewall
-#   systemd:
-#       name:  ufw
-#       state: stopped
 - name: Check if ufw package is installed
   command: service ufw status
   args:
