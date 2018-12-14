@@ -34,16 +34,16 @@
         chdir: /opt/
 - name: Mandatory step for all OSes /etc/init.d/onos
   command: cp /opt/onos/init/onos.initd /etc/init.d/onos
-- name: Additional steps for Systemd based systems  Ubuntu 16, CentOS 7+
-  command: cp /opt/onos/init/onos.service /etc/systemd/system/
-- name: Running systemctl daemon-reload
-  command: systemctl daemon-reload
-- name: Running systemctl enable onos
-  command: systemctl daemon-reload
-- name: Running systemctl start onos
-  command: systemctl start onos
-- name: Wait for port 8181 to become open on the host, verify the access to the ONOS GUI from a browser
-  wait_for:
-      port: 8181
-      delay: 25
-      state: started
+# - name: Additional steps for Systemd based systems  Ubuntu 16, CentOS 7+
+#   command: cp /opt/onos/init/onos.service /etc/systemd/system/
+# - name: Running systemctl daemon-reload
+#   command: systemctl daemon-reload
+# - name: Running systemctl enable onos
+#   command: systemctl daemon-reload
+# - name: Running systemctl start onos
+#   command: systemctl start onos
+# - name: Wait for port 8181 to become open on the host, verify the access to the ONOS GUI from a browser
+#   wait_for:
+#       port: 8181
+#       delay: 25
+#       state: started
