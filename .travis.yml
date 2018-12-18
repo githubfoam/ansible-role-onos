@@ -3,7 +3,6 @@ sudo: required
 language: python
 python:
   - "3.6"
-  - validate_certs=False
   # PyPy versions
   # - "pypy3.5"
 # matrix:
@@ -61,6 +60,7 @@ jobs:
         - sudo ansible-galaxy install -p ~/ githubfoam.onos
         - cd githubfoam.onos
         - ls -la
+        - sudo pip install urllib3
         - sudo molecule init scenario --role-name githubfoam.onos
     - stage: molecule lint
       script:
