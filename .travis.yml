@@ -51,13 +51,13 @@ jobs:
         - galaxy_role_name="githubfoam.onos"
         - sudo apt-get -qq update
         #- sudo pip install -U urllib3
-        - sudo pip install --upgrade setuptools
+        # - sudo pip install --upgrade setuptools
         - sudo apt-add-repository ppa:ansible/ansible --yes
         - sudo apt-get -qq update
-        - sudo apt-get install python3-setuptools ca-certificates
-        - sudo easy_install3 pip
-        - python3 -V
-        - sudo pip3 install ansible
+        # - sudo apt-get install python3-setuptools ca-certificates
+        # - sudo easy_install3 pip
+        # - python3 -V
+        # - sudo pip3 install ansible
         # - sudo apt-get install ansible -y
         # - ansible --version
         # - sudo apt-get install software-properties-common -y
@@ -66,7 +66,7 @@ jobs:
         - sudo ansible-galaxy install -p ~/ githubfoam.onos
         - cd githubfoam.onos
         - ls -la
-        - sudo molecule init scenario --role-name githubfoam.onos
+        # - sudo molecule init scenario --role-name githubfoam.onos
     - stage: molecule lint
       script:
         - echo "molecule lint"
