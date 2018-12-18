@@ -1,5 +1,6 @@
 ---
 sudo: required
+language: python
 env:
   global:
    - distribution=ubuntu
@@ -9,6 +10,10 @@ services:
   - docker
 before_install:
    - 'sudo docker pull ${distribution}:${version} '
+   # Install Molecule
+   - sudo apt-get -qq update
+   - pip install molecule
+   - pip install docker-py
 jobs:
   include:
     # ansible tole gets tested with official docker images
