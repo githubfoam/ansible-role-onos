@@ -46,8 +46,9 @@ jobs:
       install:
         - galaxy_role_name="githubfoam.onos"
         - sudo apt-get -qq update
-        - apt-add-repository --yes --update ppa:ansible/ansible
+        - apt-add-repository ppa:ansible/ansible
         - apt-get install ansible -y
+        - ansible --version
         - ls -la
         - apt-get install software-properties-common -y
         - sudo apt-get install -y python-pip libssl-dev
