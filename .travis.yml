@@ -1,6 +1,11 @@
 ---
 sudo: required
-language: python
+#language: python
+matrix:
+  include:
+  - language: python
+  - rvm: 2.0.0
+
 env:
   global:
    - distribution=ubuntu
