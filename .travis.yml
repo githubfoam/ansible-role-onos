@@ -56,9 +56,10 @@ jobs:
         - ansible-galaxy install --roles-path . ${galaxy_role_name}
         - cd ${galaxy_role_name}
         - ls -la
+        - sudo molecule init scenario --driver-name docker --role-name ${galaxy_role_name}
+    - stage: molecule lint
       script:
-        # DODCKER_TOKEN must be entered travis website -> repository -> settings -> environment variables
-        - curl https://registry.hub.docker.com/u/dockerfoam/onos/trigger/$DOCKER_TOKEN/
+        -sudo molecule lint
     # ansible role is installed on custom docker image with the Dockerfile and deployed to Docker Hub
     - stage: Continuous Deployment Step, one button to deploy docker image
       script:
