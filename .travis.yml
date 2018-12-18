@@ -53,10 +53,10 @@ jobs:
         - sudo apt-get install software-properties-common -y
         - sudo apt-get install -y python-pip libssl-dev
         - sudo pip install molecule
-        - sudo ansible-galaxy install --roles-path . ${galaxy_role_name}
-        - cd ${galaxy_role_name}
+        - sudo ansible-galaxy install --roles-path . githubfoam.onos
+        - cd githubfoam.onos
         - ls -la
-        - sudo molecule init scenario --role-name ${galaxy_role_name}
+        - sudo molecule init scenario --role-name githubfoam.onos
     - stage: molecule lint
       script:
         -sudo molecule lint
