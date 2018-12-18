@@ -14,12 +14,12 @@ env:
    - COMMIT=${TRAVIS_COMMIT::8}
 services:
   - docker
-before_install:
-   - 'sudo docker pull ${distribution}:${version} '
-   # Install Molecule
-   - sudo apt-get -qq update
-   - pip install molecule
-   - pip install docker-py
+# before_install:
+#    - 'sudo docker pull ${distribution}:${version} '
+#    # Install Molecule
+#    - sudo apt-get -qq update
+#    - sudo apt-get install -y python-pip libssl-dev
+#    - pip install --user molecule
 jobs:
   include:
     # ansible tole gets tested with official docker images
@@ -43,6 +43,10 @@ jobs:
         - docker exec  "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=true ansible-playbook  /etc/ansible/roles/${role_name}/tests/test.yml
     # ansible role is installed on custom docker image with the Dockerfile and deployed to Docker Hub
     - stage: Continuous Delivery Step, black box DAST etc tests
+      install:
+        - sudo apt-get -qq update
+        - sudo apt-get install -y python-pip libssl-dev
+        - pip install --user molecule
       script:
         # DODCKER_TOKEN must be entered travis website -> repository -> settings -> environment variables
         - curl https://registry.hub.docker.com/u/dockerfoam/onos/trigger/$DOCKER_TOKEN/
