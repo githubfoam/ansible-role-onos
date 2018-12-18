@@ -47,12 +47,12 @@ jobs:
         - galaxy_role_name="githubfoam.onos"
         - sudo apt-get -qq update
         - sudo apt-add-repository ppa:ansible/ansible -y
-        - apt-get install ansible -y
+        - sudo apt-get install ansible -y
         - ansible --version
         - ls -la
-        - apt-get install software-properties-common -y
+        - sudo apt-get install software-properties-common -y
         - sudo apt-get install -y python-pip libssl-dev
-        - pip install --user molecule
+        - sudo pip install --user molecule
       script:
         # DODCKER_TOKEN must be entered travis website -> repository -> settings -> environment variables
         - curl https://registry.hub.docker.com/u/dockerfoam/onos/trigger/$DOCKER_TOKEN/
