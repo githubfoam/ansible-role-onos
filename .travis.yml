@@ -2,11 +2,11 @@
 sudo: required
 #language: python
 matrix:
-  include:
-  - language: python
-    env: ISOLATED=true
-  - rvm: 2.0.0
-    env: ISOLATED=true
+    include:
+    - language: python
+      env: ISOLATED=true
+    - rvm: 2.0.0
+      env: ISOLATED=true
 env:
   global:
    - distribution=ubuntu
@@ -47,9 +47,9 @@ jobs:
         - galaxy_role_name="githubfoam.onos"
         - sudo apt-get -qq update
         - sudo apt-add-repository ppa:ansible/ansible --yes --update
+        - sudo apt-get -qq update
         - sudo apt-get install ansible -y
         - ansible --version
-        - ls -la
         - sudo apt-get install software-properties-common -y
         - sudo apt-get install -y python-pip libssl-dev
         - sudo pip install molecule
