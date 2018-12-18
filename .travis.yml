@@ -54,6 +54,8 @@ jobs:
         - sudo pip install --upgrade setuptools
         - sudo apt-add-repository ppa:ansible/ansible --yes
         - sudo apt-get -qq update
+        - sudo apt-get install python3-setuptools ca-certificates
+        - sudo easy_install3 pip
         - python3 -V
         - sudo pip3 install ansible
         # - sudo apt-get install ansible -y
