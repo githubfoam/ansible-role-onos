@@ -63,7 +63,8 @@ jobs:
         # - sudo apt-get install software-properties-common -y
         - sudo apt-get install -y python-pip libssl-dev
         - sudo pip install molecule
-        - sudo ansible-galaxy install -p ~/ githubfoam.onos
+        #- sudo ansible-galaxy install -p ~/ githubfoam.onos
+        - sudo ansible-galaxy install -p ~/githubfoam.onos githubfoam.onos
         - ls -la
         #- sudo cd ~/.ansible/roles/githubfoam.onos
         - sudo molecule init scenario --role-name githubfoam.onos
