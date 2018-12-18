@@ -5,8 +5,8 @@ matrix:
     include:
     - language: python
       env: ISOLATED=true
-    - rvm: 2.0.0
-      env: ISOLATED=true
+    # - rvm: 2.0.0
+    #   env: ISOLATED=true
 env:
   global:
    - distribution=ubuntu
@@ -44,8 +44,6 @@ jobs:
     # ansible role is installed on custom docker image with the Dockerfile and deployed to Docker Hub
     - stage: Continuous Delivery Step, black box DAST etc tests
       install:
-        - language: python
-          env: ISOLATED=true
         - galaxy_role_name="githubfoam.onos"
         - sudo apt-get -qq update
         - sudo apt-add-repository ppa:ansible/ansible --yes
