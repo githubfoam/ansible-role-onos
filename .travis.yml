@@ -1,10 +1,10 @@
 ---
 sudo: required
-#language: python
-matrix:
-    include:
-    - language: python
-      env: ISOLATED=true
+language: python
+# matrix:
+#     include:
+#     - language: python
+#       env: ISOLATED=true
     # - rvm: 2.0.0
     #   env: ISOLATED=true
 env:
