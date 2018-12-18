@@ -2,9 +2,9 @@
 sudo: required
 env:
   global:
-   - distribution=ubuntu
+    - distribution=ubuntu
      version=18.04
-   - COMMIT=${TRAVIS_COMMIT::8}
+    - COMMIT=${TRAVIS_COMMIT::8}
 services:
   - docker
 before_install:
