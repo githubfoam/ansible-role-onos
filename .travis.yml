@@ -4,8 +4,9 @@ sudo: required
 matrix:
   include:
   - language: python
+    env: ISOLATED=true
   - rvm: 2.0.0
-
+    env: ISOLATED=true
 env:
   global:
    - distribution=ubuntu
