@@ -56,7 +56,7 @@ jobs:
         - ansible-galaxy install --roles-path . ${galaxy_role_name}
         - cd ${galaxy_role_name}
         - ls -la
-        - sudo molecule init scenario --driver-name docker --role-name ${galaxy_role_name}
+        - sudo molecule init scenario --role-name ${galaxy_role_name}
     - stage: molecule lint
       script:
         -sudo molecule lint
