@@ -46,7 +46,7 @@ jobs:
       install:
         - galaxy_role_name="githubfoam.onos"
         - sudo apt-get -qq update
-        - sudo apt-add-repository ppa:ansible/ansible -y
+        - sudo apt-add-repository --yes --update ppa:ansible/ansible
         - sudo apt-get install ansible -y
         - ansible --version
         - ls -la
