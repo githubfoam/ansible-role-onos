@@ -70,6 +70,7 @@ jobs:
         - cd  ~/githubfoam.onos
         - ls -la
         - sudo molecule init scenario --role-name githubfoam.onos
+        - sudo molecule lint
     - stage: molecule lint
       script:
         - echo "molecule lint"
