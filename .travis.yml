@@ -64,9 +64,9 @@ jobs:
         - sudo apt-get install -y python-pip libssl-dev
         - sudo pip install molecule
         - sudo ansible-galaxy install -p ~/ githubfoam.onos
-        - cd githubfoam.onos
-        - ls -la
-        # - sudo molecule init scenario --role-name githubfoam.onos
+        - - ls -la
+        - cd ~/.ansible/roles/githubfoam.onos
+        - sudo molecule init scenario --role-name ~/.ansible/roles/githubfoam.onos
     - stage: molecule lint
       script:
         - echo "molecule lint"
