@@ -64,7 +64,7 @@ jobs:
         - sudo apt-get install -y python-pip libssl-dev
         - sudo pip install molecule
         #- sudo ansible-galaxy install -p ~/ githubfoam.onos
-        - sudo ansible-galaxy install -p -p ~/ githubfoam.onos
+        - sudo ansible-galaxy install -p  ~/ githubfoam.onos
         - pwd
         - ls -la
         - cd  ~/githubfoam.onos
