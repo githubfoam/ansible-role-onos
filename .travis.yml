@@ -72,8 +72,8 @@ jobs:
         - ls -la
         - cat defaults/main.yml
         - sudo molecule init scenario --role-name githubfoam.onos
-        # - sudo molecule destroy
         - sudo molecule lint
+        - sudo molecule destroy
     # - stage: molecule lint
     #   script:
     #     - echo "molecule lint"
