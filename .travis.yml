@@ -72,11 +72,14 @@ jobs:
         - ls -la
         - cat defaults/main.yml
         - sudo molecule init scenario --role-name githubfoam.onos
+        # - sudo molecule lint
+        # - sudo molecule destroy
+    - stage: molecule lint
+      script:
         - sudo molecule lint
+    - stage: molecule destroy
+      script:
         - sudo molecule destroy
-    # - stage: molecule lint
-    #   script:
-    #     - echo "molecule lint"
     # # ansible role is installed on custom docker image with the Dockerfile and deployed to Docker Hub
     # - stage: Continuous Deployment Step, one button to deploy docker image
     #   script:
