@@ -1,4 +1,5 @@
 -c constraints.txt
 ansible
 molecule
+docker
 docker-py
