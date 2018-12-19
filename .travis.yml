@@ -62,7 +62,7 @@ jobs:
         # - ansible --version
         # - sudo apt-get install software-properties-common -y
         - sudo apt-get install -y python-pip libssl-dev
-        - sudo pip install molecule
+        - sudo pip install molecule docker-py
         #- sudo ansible-galaxy install -p ~/ githubfoam.onos
         - pwd
         - sudo ansible-galaxy install -p  /home/travis/build/githubfoam/ansible-role-onos githubfoam.onos
