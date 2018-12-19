@@ -5,7 +5,7 @@
 - name: Check if ufw package is installed
   command: service ufw status
   args:
-    warn: false
+     warn: false
   register: ufw_installed
   ignore_errors: true
   changed_when: false
@@ -14,9 +14,9 @@
   check_mode: false
 - name: Disable the ufw firewall if configured
   service:
-    name: ufw
-    state: stopped
-    enabled: false
+     name: ufw
+     state: stopped
+     enabled: false
   when:
-    - firewall_disable_ufw
-    - ufw_installed.rc == 0
+     - firewall_disable_ufw
+     - ufw_installed.rc == 0
