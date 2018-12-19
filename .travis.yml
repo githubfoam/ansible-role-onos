@@ -49,6 +49,7 @@ jobs:
     - stage:  molecule lint
       install:
         - galaxy_role_name="githubfoam.onos"
+        - sudo pip install -r requirements.txt
         - sudo apt-add-repository ppa:ansible/ansible --yes
         - sudo apt-get -qq update
         - sudo apt-get install -y python-pip libssl-dev
