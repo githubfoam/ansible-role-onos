@@ -71,6 +71,7 @@ jobs:
         - pwd
         - ls -la
         - sudo molecule init scenario --role-name githubfoam.onos
+        - sudo molecule destroy
         - sudo molecule lint
     # - stage: molecule lint
     #   script:
