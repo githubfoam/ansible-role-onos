@@ -33,7 +33,7 @@ jobs:
       # - sudo ansible-galaxy install -p  /home/travis/build/githubfoam/ansible-role-onos githubfoam.onos
       # - cd  /home/travis/build/githubfoam/ansible-role-onos/githubfoam.onos
       # - sudo molecule init scenario --role-name githubfoam.onos
-      # - ls -la
+      - ls -la
       # - sudo molecule destroy
       # - stage: molecule init
       #   script:
