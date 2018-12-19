@@ -21,7 +21,7 @@ services:
   - docker
 jobs:
   include:
-    - stage:  molecule lint
+    - stage:  molecule test
       install:
         # - galaxy_role_name="githubfoam.onos"
         - sudo pip install -r requirements.txt
@@ -41,7 +41,7 @@ jobs:
     # - stage: molecule destroy
     #   script:
     #     - molecule destroy
-    - stage: molecule test
+    # - stage: molecule test
       script:
         - sudo molecule test
 after_success:
