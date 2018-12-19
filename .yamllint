@@ -8,7 +8,7 @@ rules:
     max-spaces-inside: 1
     level: error
   line-length:
-    max: 100
+    max: 120
   # NOTE(retr0h): Templates no longer fail this lint rule.
   #               Uncomment if running old Molecule templates.
   # truthy: disable

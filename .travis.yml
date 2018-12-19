@@ -9,8 +9,8 @@ python:
 #     include:
 #     - language: python
 #       env: ISOLATED=true
-    # - rvm: 2.0.0
-    #   env: ISOLATED=true
+# - rvm: 2.0.0
+# env: ISOLATED=true
 env:
   global:
     - ROLE_NAME: githubfoam.onos
@@ -21,7 +21,7 @@ services:
   - docker
 jobs:
   include:
-    - stage:  molecule test
+    - stage: molecule test
       install:
         # - galaxy_role_name="githubfoam.onos"
         # - sudo pip install -r requirements.txt
@@ -30,28 +30,28 @@ jobs:
         - sudo apt-get install -y python-pip libssl-dev
         - sudo pip install molecule docker-py
       before_script:
-        # - sudo ansible-galaxy install -p  /home/travis/build/githubfoam/ansible-role-onos githubfoam.onos
-        # - cd  /home/travis/build/githubfoam/ansible-role-onos/githubfoam.onos
-        # - sudo molecule init scenario --role-name githubfoam.onos
-        # - ls -la
-        # - sudo molecule destroy
-    # - stage: molecule init
-    #   script:
-    #     - molecule init scenario --role-name githubfoam.onos
-    # - stage: molecule test
-    #   script:
-    #     - molecule destroy
-    # - stage: molecule test
+      # - sudo ansible-galaxy install -p  /home/travis/build/githubfoam/ansible-role-onos githubfoam.onos
+      # - cd  /home/travis/build/githubfoam/ansible-role-onos/githubfoam.onos
+      # - sudo molecule init scenario --role-name githubfoam.onos
+      # - ls -la
+      # - sudo molecule destroy
+      # - stage: molecule init
+      #   script:
+      #     - molecule init scenario --role-name githubfoam.onos
+      # - stage: molecule test
+      #   script:
+      #     - molecule destroy
+      # - stage: molecule test
       script:
         - sudo molecule test
 after_success:
-    - stage: Workflow ends
-      script:
-        - echo "success"
+ - stage: Workflow ends
+   script:
+    - echo "success"
 # Notify Ansible Galaxy when an ansible role builds successfully.
 notifications:
   #email: false
-   email:
+  email:
      on_success: never # default: change
      on_failure: always # default: always
-   webhooks: https://galaxy.ansible.com/api/v1/notifications/
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/

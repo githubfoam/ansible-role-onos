@@ -19,16 +19,16 @@
     name: "{{ packages }}"
     vars:
       packages:
-      - oracle-java8-installer
-      - oracle-java8-set-default
-      - curl
+        - oracle-java8-installer
+        - oracle-java8-set-default
+        - curl
       state: latest
-      autoclean: yes
+      autoclean: true
 - name: Unarchive a file that needs to be downloaded (added in 2.0)
   unarchive:
     src: http://repo1.maven.org/maven2/org/onosproject/onos-releases/onos-1.12.0/onos-1.12.0.tar.gz
     dest: /opt/
-    remote_src: yes
+    remote_src: true
 - name: Rename the extracted directory to "onos"
   command: mv onos-1.12.0 onos
   args:
