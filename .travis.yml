@@ -49,28 +49,12 @@ jobs:
     - stage: Continuous Delivery Step, black box DAST etc tests
       install:
         - galaxy_role_name="githubfoam.onos"
-        # - sudo apt-get -qq update
-        #- sudo pip install -U urllib3
-        # - sudo pip install --upgrade setuptools
         - sudo apt-add-repository ppa:ansible/ansible --yes
         - sudo apt-get -qq update
-        # - sudo apt-get install python3-setuptools ca-certificates
-        # - sudo easy_install3 pip
-        # - python3 -V
-        # - sudo pip3 install ansible
-        # - sudo apt-get install ansible -y
-        # - ansible --version
-        # - sudo apt-get install software-properties-common -y
         - sudo apt-get install -y python-pip libssl-dev
         - sudo pip install molecule docker-py
-        #- sudo ansible-galaxy install -p ~/ githubfoam.onos
-        - pwd
         - sudo ansible-galaxy install -p  /home/travis/build/githubfoam/ansible-role-onos githubfoam.onos
-        - ls -la
         - cd  /home/travis/build/githubfoam/ansible-role-onos/githubfoam.onos
-        - pwd
-        - ls -la
-        - cat defaults/main.yml
         - sudo molecule init scenario --role-name githubfoam.onos
         # - sudo molecule lint
         # - sudo molecule destroy
