@@ -1,7 +1,9 @@
 ---
-- name: tasks file for ansible-role-onos
-  include_tasks: "{{ ansible_os_family }}-install.yml"
-  when: ansible_os_family == 'Debian'
-- name: configure onos.
-  include_tasks: "configure-{{ ansible_os_family }}.yml"
-  when: ansible_os_family == 'Debian'
+# - name: tasks file for ansible-role-onos
+#   include_tasks: "{{ ansible_os_family }}-install.yml"
+#   when: ansible_os_family == 'Debian'
+# - name: configure onos.
+#   include_tasks: "configure-{{ ansible_os_family }}.yml"
+#   when: ansible_os_family == 'Debian'
+- name: Update apt cache.
+  apt: update_cache=yes
