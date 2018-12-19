@@ -65,9 +65,9 @@ jobs:
         - sudo pip install molecule
         #- sudo ansible-galaxy install -p ~/ githubfoam.onos
         - pwd
-        - sudo ansible-galaxy install -p  ~/ githubfoam.onos
+        - sudo ansible-galaxy install -p  ~ githubfoam.onos
         - ls -la
-        - cd  ~/githubfoam.onos
+        - cd  ~githubfoam.onos
         - pwd
         - ls -la
         - sudo molecule init scenario --role-name githubfoam.onos
