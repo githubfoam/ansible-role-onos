@@ -18,7 +18,8 @@ jobs:
         - sudo apt-get -qq update
       before_script:
         - sudo apt-get install -y python-pip libssl-dev
-        - pip install molecule docker-py
+        - pip install molecule
+        - pip install docker-py
         - pip install pyOpenSSL
       script:
         - molecule --debug test
