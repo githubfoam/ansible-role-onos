@@ -3,3 +3,4 @@ ansible
 molecule
 docker
 docker-py
+yamllint
