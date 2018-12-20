@@ -21,12 +21,15 @@ jobs:
         - sudo pip install molecule docker-py
       script:
         - ls -la
-        - sudo molecule lint
+        - molecule lint
     - stage: molecule destroy
-      script:
+      install:
+        - sudo apt-get -qq update
+      before_script:
         - sudo apt-get install -y python-pip libssl-dev
         - sudo pip install molecule docker-py
-        - sudo molecule destroy
+      script:
+        - molecule destroy
 
 notifications:
   email:
