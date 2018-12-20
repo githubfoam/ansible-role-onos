@@ -12,8 +12,7 @@
   apt:
     update_cache: true
 - name: Execute the command in remote shell; Install Oracle Java 1.8
-  shell: echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" \
-        | debconf-set-selections
+  shell: echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
 - name: Install Oracle Java 1.8
   apt:
     name: "{{ packages }}"
