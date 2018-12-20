@@ -22,7 +22,7 @@ jobs:
         - pip install docker-py
         - pip install pyOpenSSL
       script:
-        - molecule idempotence
+        - molecule --debug test
     # - stage: molecule lint
     #   install:
     #     - sudo apt-get -qq update
