@@ -24,7 +24,8 @@ jobs:
         - sudo molecule lint
     - stage: molecule destroy
       script:
-        - ls -la
+        - sudo apt-get install -y python-pip libssl-dev
+        - sudo pip install molecule docker-py
         - sudo molecule destroy
 
 notifications:
