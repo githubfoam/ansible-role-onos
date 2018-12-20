@@ -22,7 +22,7 @@ jobs:
         - pip install docker-py
         - pip install pyOpenSSL
       script:
-        - molecule --debug test
+        - molecule test
 notifications:
   email:
     on_success: never
