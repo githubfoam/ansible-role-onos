@@ -13,7 +13,7 @@ services:
   - docker
 jobs:
   include:
-    - stage: molecule test
+    - stage: molecule lint
       install:
         - sudo apt-add-repository ppa:ansible/ansible --yes
         - sudo apt-get -qq update
@@ -22,12 +22,11 @@ jobs:
       before_script:
         - ls -la
       script:
-        - sudo molecule test
+        - sudo molecule lint
 after_success:
-  - stage: Workflow ends
+  - stage: Workflow destroy
     script:
-      - echo "success"
-
+      - sudo molecule test
 notifications:
   email:
     on_success: never
