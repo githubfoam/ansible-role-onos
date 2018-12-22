@@ -18,8 +18,10 @@ jobs:
         - sudo apt-get -qq update
       before_script:
         - sudo apt-get install python-virtualenv
-        - pip install -r requirements.txt
       script:
+        - virtualenv --no-site-packages myenv3
+        - source myenv3/bin/activate
+        - pip install -r requirements.txt
         - sudo molecule test
 notifications:
   email:
