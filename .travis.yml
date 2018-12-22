@@ -22,8 +22,9 @@ jobs:
         - molecule --version
         - pwd
         - ls -la
+        - molecule test
       script:
-        - sudo molecule test
+        - molecule test
 notifications:
   email:
     on_success: never
