@@ -3,6 +3,8 @@ sudo: required
 language: python
 python:
   - "2.7"
+virtualenv:
+  system_site_packages: true
 env:
   global:
     - ROLE_NAME: githubfoam.onos
@@ -18,7 +20,7 @@ jobs:
         - sudo apt-get -qq update
       before_script:
         - pip install -r requirements.txt
-        - molecule test
+        # - molecule test
       script:
         - molecule test
 notifications:
