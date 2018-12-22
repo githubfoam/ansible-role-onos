@@ -8,7 +8,7 @@ env:
     - ROLE_NAME: githubfoam.onos
   matrix:
     # - MOLECULE_DISTRO: centos74
-    - MOLECULE_DISTRO: ubuntu1804
+    - MOLECULE_DISTRO: ubuntu1604
 services:
   - docker
 jobs:
@@ -19,8 +19,6 @@ jobs:
       before_script:
         - sudo apt-get install python-virtualenv
       script:
-        - virtualenv --no-site-packages myenv3
-        - source myenv3/bin/activate
         - pip install -r requirements.txt
         - sudo molecule test
 notifications:
