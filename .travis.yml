@@ -43,9 +43,12 @@ jobs:
       script:
         - molecule converge
         - molecule idempotence
-    - stage: molecule side_effect
+    - stage: molecule verify
       script:
-        - molecule side_effect
+        - molecule verify
+    - stage: molecule destroy
+      script:
+        - molecule destroy
 notifications:
   email:
     on_success: never
