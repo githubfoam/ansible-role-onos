@@ -18,10 +18,6 @@ jobs:
         - sudo apt-get -qq update
       before_script:
         - pip install -r requirements.txt
-        - ansible --version
-        - molecule --version
-        - pwd
-        - ls -la
         - molecule test
       script:
         - molecule test
