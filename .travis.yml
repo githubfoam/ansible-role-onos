@@ -39,9 +39,6 @@ jobs:
     - stage: molecule prepare
       script:
         - molecule prepare
-    # - stage: molecule converge
-    #   script:
-    #     - molecule converge
     - stage: molecule converge & idempotence
       script:
         - molecule converge
@@ -49,15 +46,6 @@ jobs:
     - stage: molecule side_effect
       script:
         - molecule side_effect
-    # - stage: molecule verify
-    #   script:
-    #     - molecule verify
-    # - stage: molecule destroy
-    #   script:
-    #     - molecule destroy
-    # - stage: molecule test
-    #   script:
-    #     - molecule test
 notifications:
   email:
     on_success: never
