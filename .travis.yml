@@ -11,7 +11,7 @@ env:
     - ROLE_NAME: githubfoam.onos
   matrix:
     # - MOLECULE_DISTRO: centos74
-    - MOLECULE_DISTRO: ubuntu1604
+    # - MOLECULE_DISTRO: ubuntu1604
     - MOLECULE_DISTRO: ubuntu1804
 services:
   - docker
