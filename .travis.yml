@@ -24,36 +24,39 @@ jobs:
         - pip install -r requirements.txt
       script:
         - molecule lint
-    - stage: molecule destroy
+    # - stage: molecule destroy
+    #   script:
+    #     - molecule destroy
+    # - stage: molecule dependency
+    #   script:
+    #     - molecule dependency
+    # - stage: molecule syntax
+    #   script:
+    #     - molecule syntax
+    # - stage: molecule create
+    #   script:
+    #     - molecule create
+    # - stage: molecule prepare
+    #   script:
+    #     - molecule prepare
+    # - stage: molecule converge
+    #   script:
+    #     - molecule converge
+    # - stage: molecule idempotence
+    #   script:
+    #     - molecule idempotence
+    # - stage: molecule side_effect
+    #   script:
+    #     - molecule side_effect
+    # - stage: molecule verify
+    #   script:
+    #     - molecule verify
+    # - stage: molecule destroy
+    #   script:
+    #     - molecule destroy
+    - stage: molecule test
       script:
-        - molecule destroy
-    - stage: molecule dependency
-      script:
-        - molecule dependency
-    - stage: molecule syntax
-      script:
-        - molecule syntax
-    - stage: molecule create
-      script:
-        - molecule create
-    - stage: molecule prepare
-      script:
-        - molecule prepare
-    - stage: molecule converge
-      script:
-        - molecule converge
-    - stage: molecule idempotence
-      script:
-        - molecule idempotence
-    - stage: molecule side_effect
-      script:
-        - molecule side_effect
-    - stage: molecule verify
-      script:
-        - molecule verify
-    - stage: molecule destroy
-      script:
-        - molecule destroy
+        - molecule test
 notifications:
   email:
     on_success: never
