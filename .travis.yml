@@ -2,8 +2,8 @@
 sudo: required
 language: python
 python:
-  # - "2.7"
-  - "3.6"
+  - "2.7"
+  # - "3.6"
 virtualenv:
   system_site_packages: true
 env:
@@ -11,8 +11,8 @@ env:
     - ROLE_NAME: githubfoam.onos
   matrix:
     # - MOLECULE_DISTRO: centos74
-    # - MOLECULE_DISTRO: ubuntu1604
-    - MOLECULE_DISTRO: ubuntu1804
+    - MOLECULE_DISTRO: ubuntu1604
+    # - MOLECULE_DISTRO: ubuntu1804
 services:
   - docker
 jobs:
