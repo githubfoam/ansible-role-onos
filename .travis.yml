@@ -17,12 +17,12 @@ jobs:
       install:
         - sudo apt-get -qq update
       before_script:
+        - pip install -r requirements.txt
         - ansible --version
         - molecule --version
-        - pip install -r requirements.txt
         - pwd
         - ls -la
-      script:        
+      script:
         - sudo molecule test
 notifications:
   email:
