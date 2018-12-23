@@ -29,14 +29,17 @@ jobs:
     - stage: molecule create
       script:
         - molecule create
-    - stage: molecule converge & idempotence
+    - stage: molecule converge & idempotence & verify
       script:
         - molecule converge
         - molecule idempotence
         - molecule verify
-    - stage: molecule verify
+    - stage: molecule syntax
       script:
-        - molecule verify
+        - molecule syntax
+    - stage: molecule destroy
+      script:
+        - molecule destroy
 notifications:
   email:
     on_success: never
