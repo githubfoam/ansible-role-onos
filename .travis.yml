@@ -34,6 +34,9 @@ jobs:
       script:
         - molecule converge
         - molecule idempotence
+    - stage: molecule verify
+      script:
+        - molecule verify
 notifications:
   email:
     on_success: never
