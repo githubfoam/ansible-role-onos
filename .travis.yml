@@ -36,7 +36,7 @@ jobs:
         - molecule idempotence
     - stage: molecule verify
       script:
-        - molecule verify
+        - sudo molecule verify
 notifications:
   email:
     on_success: never
