@@ -33,6 +33,7 @@ jobs:
       script:
         - molecule converge
         - molecule idempotence
+        - molecule verify
     - stage: molecule verify
       script:
         - molecule verify
