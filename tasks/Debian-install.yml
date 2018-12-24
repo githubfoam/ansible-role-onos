@@ -26,31 +26,14 @@
       - curl
     state: latest
     autoclean: true
-# - name: Download onos
-#   get_url:
-#     url: http://repo1.maven.org/maven2/org/onosproject/onos-releases/onos-1.12.0/onos-1.12.0.tar.gz
-#     dest: /tmp
-#     mode: 0644
-#     force: false
 - name: Unarchive the artifact
   unarchive:
     src: http://repo1.maven.org/maven2/org/onosproject/onos-releases/onos-1.12.0/onos-1.12.0.tar.gz
     dest: /tmp
     extra_opts: [--strip-components=1]
     remote_src: true
-# - name: Unarchive a file that needs to be downloaded (added in 2.0)
-#   unarchive:
-#     src: http://repo1.maven.org/maven2/org/onosproject/onos-releases/onos-1.12.0/onos-1.12.0.tar.gz
-#     dest: /opt/
-#     remote_src: true
-# - name: ls -la
-#   command: ls -la /tmp
-# - name: Rename the extracted directory to onos
-#   command: mv onos-1.12.0 onos
-#   args:
-#     chdir: /tmp
-- name: Mandatory step for all OSes /etc/init.d/onos
-  command: sudo cp /tmp/init/onos.initd /etc/init.d/onos
+# - name: Mandatory step for all OSes /etc/init.d/onos
+#   command: cp /tmp/init/onos.initd /etc/init.d/onos
 # - name: Additional steps for Systemd based systems  Ubuntu 16, CentOS 7+
 #   command: cp /opt/onos/init/onos.service /etc/systemd/system/
 # - name: Running systemctl daemon-reload
