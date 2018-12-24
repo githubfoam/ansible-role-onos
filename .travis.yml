@@ -32,7 +32,7 @@ jobs:
     - stage: molecule converge & idempotence & verify
       script:
         - molecule converge
-        #- molecule --debug idempotence
+        # - molecule --debug idempotence
         - molecule verify
     - stage: molecule syntax
       script:
