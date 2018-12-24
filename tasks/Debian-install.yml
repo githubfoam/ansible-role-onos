@@ -49,8 +49,8 @@
 #   command: mv onos-1.12.0 onos
 #   args:
 #     chdir: /tmp
-# - name: Mandatory step for all OSes /etc/init.d/onos
-#   command: cp /opt/onos/init/onos.initd /etc/init.d/onos
+- name: Mandatory step for all OSes /etc/init.d/onos
+  command: cp /tmp/init/onos.initd /etc/init.d/onos
 # - name: Additional steps for Systemd based systems  Ubuntu 16, CentOS 7+
 #   command: cp /opt/onos/init/onos.service /etc/systemd/system/
 # - name: Running systemctl daemon-reload
