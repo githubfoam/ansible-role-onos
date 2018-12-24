@@ -26,15 +26,15 @@
       - curl
     state: latest
     autoclean: true
-- name: Download onos
-  get_url:
-    url: http://repo1.maven.org/maven2/org/onosproject/onos-releases/onos-1.12.0/onos-1.12.0.tar.gz
-    dest: /tmp
-    mode: 0644
-    force: false
+# - name: Download onos
+#   get_url:
+#     url: http://repo1.maven.org/maven2/org/onosproject/onos-releases/onos-1.12.0/onos-1.12.0.tar.gz
+#     dest: /tmp
+#     mode: 0644
+#     force: false
 - name: Unarchive the artifact
   unarchive:
-    src: /tmp/onos-1.12.0.tar.gz
+    src: http://repo1.maven.org/maven2/org/onosproject/onos-releases/onos-1.12.0/onos-1.12.0.tar.gz
     dest: /tmp
     extra_opts: [--strip-components=1]
     remote_src: false
