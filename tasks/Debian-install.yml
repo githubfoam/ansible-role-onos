@@ -32,16 +32,16 @@
     dest: /tmp
     extra_opts: [--strip-components=1]
     remote_src: true
-# - name: Mandatory step for all OSes /etc/init.d/onos
-#   command: cp /tmp/init/onos.initd /etc/init.d/onos
-# - name: Additional steps for Systemd based systems  Ubuntu 16, CentOS 7+
-#   command: cp /opt/onos/init/onos.service /etc/systemd/system/
-# - name: Running systemctl daemon-reload
-#   command: systemctl daemon-reload
-# - name: Running systemctl enable onos
-#   command: systemctl daemon-reload
-# - name: Running systemctl start onos
-#   command: systemctl start onos
+- name: Mandatory step for all OSes /etc/init.d/onos
+  command: cp /tmp/init/onos.initd /etc/init.d/onos
+- name: Additional steps for Systemd based systems  Ubuntu 16, CentOS 7+
+  command: cp /opt/onos/init/onos.service /etc/systemd/system/
+- name: Running systemctl daemon-reload
+  command: systemctl daemon-reload
+- name: Additional steps for Upstart based systems
+  service:
+    name: onos
+    state: started
 # - name: Wait for port 8181 to become open on the host,the ONOS GUI
 #   wait_for:
 #       port: 8181
