@@ -44,6 +44,8 @@
 #     dest: /opt/
 #     remote_src: true
 - name: Rename the extracted directory to onos
+  command: ls -la /tmp
+- name: Rename the extracted directory to onos
   command: mv onos-1.12.0 onos
   args:
     chdir: /tmp
