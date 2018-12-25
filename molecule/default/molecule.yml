@@ -15,7 +15,7 @@ platforms:
     #   - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
     groups:
-     - DebianGrp
+      - DebianGrp
   - name: ubuntu1804
     image: ubuntu:18.04
     # command: /sbin/init
@@ -25,12 +25,12 @@ platforms:
     #   - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
     groups:
-     - DebianGrp
+      - DebianGrp
 provisioner:
   name: ansible
   group_vars:
-   DebianGrp:
-      ansible_become: true
+    DebianGrp:
+    ansible_become: true
   lint:
     name: ansible-lint
 scenario:
