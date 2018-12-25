@@ -6,25 +6,23 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: instance
-    # image: centos:7
-    image: ubuntu:trusty
-    command: /sbin/init
-    capabilities:
-      - SYS_ADMIN
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+  - name: ubuntu1604
+    image: ubuntu:16.04
+    # command: /sbin/init
+    # capabilities:
+    #   - SYS_ADMIN
+    # volumes:
+    #   - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
     groups:
      - DebianGrp
-  - name: instance
-    # image: centos:7
-    image: ubuntu:bionic
-    command: /sbin/init
-    capabilities:
-      - SYS_ADMIN
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+  - name: ubuntu1804
+    image: ubuntu:18.04
+    # command: /sbin/init
+    # capabilities:
+    #   - SYS_ADMIN
+    # volumes:
+    #   - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
     groups:
      - DebianGrp
