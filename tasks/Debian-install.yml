@@ -35,7 +35,7 @@
 - name: Mandatory step for all OSes /etc/init.d/onos
   command: cp /tmp/init/onos.initd /etc/init.d/onos
 - name: Additional steps for Systemd based systems  Ubuntu 16, CentOS 7+
-  command: cp /opt/onos/init/onos.service /etc/systemd/system/
+  command: cp /tmp/init/onos.service /etc/systemd/system/
 - name: Running systemctl daemon-reload
   command: systemctl daemon-reload
 - name: Additional steps for Upstart based systems
