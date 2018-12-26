@@ -14,14 +14,14 @@ platforms:
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
-  # - name: xenial
-  #   image: ubuntu:xenial
-  #   command: /sbin/init
-  #   capabilities:
-  #     - SYS_ADMIN
-  #   volumes:
-  #     - /sys/fs/cgroup:/sys/fs/cgroup:ro
-  #   privileged: true
+# - name: xenial
+#   image: ubuntu:xenial
+#   command: /sbin/init
+#   capabilities:
+#     - SYS_ADMIN
+#   volumes:
+#     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+#   privileged: true
 provisioner:
   name: ansible
   playbooks:
