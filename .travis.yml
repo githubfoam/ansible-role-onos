@@ -6,8 +6,8 @@ python:
 virtualenv:
   system_site_packages: true
 env:
-  - MOLECULE_SCENARIO=ubuntu1804 
-  - MOLECULE_SCENARIO=ubuntu1604
+  - MOLECULE_SCENARIO=ubuntu1804
+  # - MOLECULE_SCENARIO=ubuntu1604
 services:
   - docker
 jobs:
