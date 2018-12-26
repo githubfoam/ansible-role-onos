@@ -55,4 +55,4 @@
         capabilities: "{{ item.capabilities | default(omit) }}"
         user: "{{ item.user | default(omit) }}"
         working_dir: "{{ item.working_dir | default(omit) }}"
-        with_items: "{{ molecule_yml.platforms }}"
+      with_items: "{{ molecule_yml.platforms }}"
