@@ -1,1 +1,1 @@
-  testinfra_hosts = ["ubuntu1604"]
+testinfra_hosts = ["ubuntu1604"]

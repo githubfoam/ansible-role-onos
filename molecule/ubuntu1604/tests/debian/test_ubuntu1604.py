@@ -1,6 +1,5 @@
-import os
 import pytest
-import testinfra.utils.ansible_runner
+
 
 @pytest.mark.parametrize('pkg', [
   'software-properties-common',
