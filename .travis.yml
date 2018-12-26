@@ -6,33 +6,37 @@ python:
 # virtualenv:
 #   system_site_packages: true
 env:
-  # - MOLECULE_SCENARIO=ubuntu1804
+  - MOLECULE_SCENARIO=ubuntu1804
   - MOLECULE_SCENARIO=ubuntu1604
 services:
   - docker
 jobs:
   include:
-    - stage: molecule destroy
-      install:
-        - sudo apt-get -qq update
+    - stage: molecule lint
+      # install:
+      #   - sudo apt-get -qq update
       before_script:
-        - ls -la
-        - virtualenv --no-site-packages --python=$(which python2.7) envmolecule-${MOLECULE_SCENARIO}
-        - source envmolecule-${MOLECULE_SCENARIO}/bin/activate
-        - pip install -r requirements.txt
+        # - virtualenv --no-site-packages --python=$(which python2.7) envmolecule-${MOLECULE_SCENARIO}
+        # - source envmolecule-${MOLECULE_SCENARIO}/bin/activate
+        # - pip install -r requirements.txt
+        - sudo apt-get -qq update
       script:
-        - molecule destroy --scenario-name ${MOLECULE_SCENARIO}
+        - molecule lint --scenario-name ${MOLECULE_SCENARIO}
     # - stage: molecule destroy
     #   script:
     #     - molecule destroy --scenario-name ${MOLECULE_SCENARIO}
-    - stage: molecule create
-      script:
-        - ls -la
-        - ls -la envmolecule-${MOLECULE_SCENARIO}
+    # - stage: molecule create
+    #   script:
+    #     - source envmolecule-${MOLECULE_SCENARIO}/bin/activate
+    #     - molecule create --scenario-name ${MOLECULE_SCENARIO}
+    - stage: molecule create & converge & verify
+      before_script:
+        - virtualenv --no-site-packages --python=$(which python2.7) envmolecule-${MOLECULE_SCENARIO}
         - source envmolecule-${MOLECULE_SCENARIO}/bin/activate
-        - molecule create --scenario-name ${MOLECULE_SCENARIO}
-    - stage: molecule converge & verify
+        - pip install -r requirements.txt
+        - sudo apt-get -qq update
       script:
+        - molecule create --scenario-name ${MOLECULE_SCENARIO}
         - molecule converge --scenario-name ${MOLECULE_SCENARIO}
         # - molecule idempotence
         - molecule verify --scenario-name ${MOLECULE_SCENARIO}
