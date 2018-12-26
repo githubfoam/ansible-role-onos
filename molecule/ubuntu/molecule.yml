@@ -8,6 +8,7 @@ lint:
 platforms:
   - name: bionic
     image: ubuntu:bionic
+    command: /sbin/init
     capabilities:
       - SYS_ADMIN
     volumes:
@@ -15,6 +16,7 @@ platforms:
     privileged: true
   - name: xenial
     image: ubuntu:xenial
+    command: /sbin/init
     capabilities:
       - SYS_ADMIN
     volumes:
