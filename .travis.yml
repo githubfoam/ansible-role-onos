@@ -10,12 +10,12 @@ env:
   # - MOLECULE_SCENARIO=debian MOLECULE_USER=vagrant
   # - MOLECULE_SCENARIO=fedora MOLECULE_USER=vagrant
   # - MOLECULE_SCENARIO=ubuntu1804 MOLECULE_USER=vagrant
-  - MOLECULE_SCENARIO=ubuntu1604 MOLECULE_USER=vagrant
+  - MOLECULE_SCENARIO=ubuntu1604
 services:
   - docker
 jobs:
   include:
-    - stage: molecule lint 
+    - stage: molecule lint
       install:
         - sudo apt-get -qq update
       before_script:
@@ -28,7 +28,7 @@ jobs:
     - stage: molecule create
       script:
         - molecule create --scenario-name ${MOLECULE_SCENARIO}
-    - stage: molecule converge & idempotence & verify
+    - stage: molecule converge & verify
       script:
         - molecule converge --scenario-name ${MOLECULE_SCENARIO}
         # - molecule idempotence
