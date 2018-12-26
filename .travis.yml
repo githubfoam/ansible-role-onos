@@ -12,10 +12,11 @@ services:
   - docker
 jobs:
   include:
-    - stage: molecule lint
+    - stage: molecule destroy
       install:
         - sudo apt-get -qq update
       before_script:
+        - ls -la
         - virtualenv --no-site-packages --python=$(which python2.7) envmolecule-${MOLECULE_SCENARIO}
         - source envmolecule-${MOLECULE_SCENARIO}/bin/activate
         - pip install -r requirements.txt
@@ -26,6 +27,9 @@ jobs:
     #     - molecule destroy --scenario-name ${MOLECULE_SCENARIO}
     - stage: molecule create
       script:
+        - ls -la
+        - ls -la envmolecule-${MOLECULE_SCENARIO}
+        - source envmolecule-${MOLECULE_SCENARIO}/bin/activate
         - molecule create --scenario-name ${MOLECULE_SCENARIO}
     - stage: molecule converge & verify
       script:
