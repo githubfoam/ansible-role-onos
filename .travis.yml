@@ -29,13 +29,12 @@ services:
 jobs:
   include:
     - stage: molecule ubuntu1604 ubuntu1804
-      # install:
-      #   - sudo apt-get -qq update
+      install:
+        - sudo apt-get -qq update
       before_script:
         - virtualenv --python=$(which python2.7) .venv
         - source .venv/bin/activate
         - pip install -r requirements.txt
-        - sudo apt-get -qq update
       script:
 #   # - molecule test --scenario-name ${MOLECULE_SCENARIO}
       - molecule lint --scenario-name ${MOLECULE_SCENARIO}
