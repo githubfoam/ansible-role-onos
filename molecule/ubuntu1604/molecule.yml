@@ -6,14 +6,6 @@ driver:
 lint:
   name: yamllint
 platforms:
-  # - name: bionic
-  #   image: ubuntu:bionic
-  #   command: /sbin/init
-  #   capabilities:
-  #     - SYS_ADMIN
-  #   volumes:
-  #     - /sys/fs/cgroup:/sys/fs/cgroup:ro
-  #   privileged: true
   - name: xenial
     image: ubuntu:xenial
     command: /sbin/init
@@ -38,7 +30,6 @@ scenario:
   name: ubuntu1604
 verifier:
   name: testinfra
-  # directory: ../../tests/
   directory: /tests/
   options:
     verbose: true
