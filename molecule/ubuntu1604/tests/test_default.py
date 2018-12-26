@@ -2,6 +2,7 @@ import pytest
 
 testinfra_hosts = ["xenial"]
 
+
 @pytest.mark.parametrize('pkg', [
   'software-properties-common',
   'oracle-java8-set-default',
