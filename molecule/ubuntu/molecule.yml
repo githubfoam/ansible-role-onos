@@ -15,7 +15,7 @@ provisioner:
   playbooks:
     create: ../default/create.yml
     prepare: ../default/prepare.yml
-    # converge: ../../tests/test.yml
+    converge: ../../tests/test.yml
     destroy: ../default/destroy.yml
   config_options:
     defaults:
@@ -26,7 +26,6 @@ scenario:
   name: ubuntu
 verifier:
   name: testinfra
-  # directory: ../../tests/
   directory: ../../tests/
   options:
     verbose: true
