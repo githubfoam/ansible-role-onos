@@ -29,14 +29,18 @@ services:
 jobs:
   include:
     - stage: molecule ubuntu1604 ubuntu1804
-      before_install:
-        - sudo apt-get -qq update
-      install:
-        - virtualenv --python=$(which python2.7) .venv
-        - source .venv/bin/activate
-        - pip install -r requirements.txt
+      # before_install:
+      #   - sudo apt-get -qq update
+      # install:
+      #   - virtualenv --python=$(which python2.7) .venv
+      #   - source .venv/bin/activate
+      #   - pip install -r requirements.txt
       script:
 #   # - molecule test --scenario-name ${MOLECULE_SCENARIO}
+      - sudo apt-get -qq update
+      - virtualenv --python=$(which python2.7) .venv
+      - source .venv/bin/activate
+      - pip install -r requirements.txt
       - molecule lint --scenario-name ${MOLECULE_SCENARIO}
       - molecule destroy --scenario-name ${MOLECULE_SCENARIO}
       - molecule dependency --scenario-name ${MOLECULE_SCENARIO}
