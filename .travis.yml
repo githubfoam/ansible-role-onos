@@ -15,7 +15,7 @@ services:
   - docker
 jobs:
   include:
-    - stage: molecule lint ${MOLECULE_SCENARIO}
+    - stage: molecule lint 
       install:
         - sudo apt-get -qq update
       before_script:
