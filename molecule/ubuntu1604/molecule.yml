@@ -30,7 +30,7 @@ scenario:
   name: ubuntu1604
 verifier:
   name: testinfra
-  directory: /tests/
+  directory: /tests/test_ubuntu1604.py
   options:
     verbose: true
   lint:
