@@ -6,10 +6,7 @@ python:
 virtualenv:
   system_site_packages: true
 env:
-  # - MOLECULE_SCENARIO=centos MOLECULE_USER=vagrant
-  # - MOLECULE_SCENARIO=debian MOLECULE_USER=vagrant
-  # - MOLECULE_SCENARIO=fedora MOLECULE_USER=vagrant
-  # - MOLECULE_SCENARIO=ubuntu1804 MOLECULE_USER=vagrant
+  - MOLECULE_SCENARIO=ubuntu1804 
   - MOLECULE_SCENARIO=ubuntu1604
 services:
   - docker
