@@ -16,6 +16,8 @@ jobs:
       install:
         - sudo apt-get -qq update
       before_script:
+        - virtualenv --no-site-packages --python=$(which python2.7) envmolecule-${MOLECULE_SCENARIO}
+        - source envmolecule-${MOLECULE_SCENARIO}/bin/activate
         - pip install -r requirements.txt
       script:
         - molecule lint --scenario-name ${MOLECULE_SCENARIO}
