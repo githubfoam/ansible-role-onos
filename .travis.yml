@@ -4,7 +4,7 @@ language: python
 python:
   - "2.7"
 env:
-  - MOLECULE_SCENARIO=ubuntu
+  - MOLECULE_SCENARIO=ubuntu1604
 services:
   - docker
 before_install:

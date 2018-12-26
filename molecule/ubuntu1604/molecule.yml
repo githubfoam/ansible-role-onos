@@ -35,7 +35,7 @@ provisioner:
   lint:
     name: ansible-lint
 scenario:
-  name: ubuntu
+  name: ubuntu1604
 verifier:
   name: testinfra
   # directory: ../../tests/
