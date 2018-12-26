@@ -16,12 +16,12 @@ jobs:
       # install:
       #   - sudo apt-get -qq update
       before_script:
-        # - virtualenv --no-site-packages --python=$(which python2.7) envmolecule-${MOLECULE_SCENARIO}
-        # - source envmolecule-${MOLECULE_SCENARIO}/bin/activate
-        # - pip install -r requirements.txt
+        - virtualenv --no-site-packages --python=$(which python2.7) envmolecule-${MOLECULE_SCENARIO}
+        - source envmolecule-${MOLECULE_SCENARIO}/bin/activate
+        - pip install -r requirements.txt
         - sudo apt-get -qq update
       script:
-        - molecule lint --scenario-name ${MOLECULE_SCENARIO}
+        - molecule test --scenario-name ${MOLECULE_SCENARIO}
     # - stage: molecule destroy
     #   script:
     #     - molecule destroy --scenario-name ${MOLECULE_SCENARIO}
@@ -29,21 +29,21 @@ jobs:
     #   script:
     #     - source envmolecule-${MOLECULE_SCENARIO}/bin/activate
     #     - molecule create --scenario-name ${MOLECULE_SCENARIO}
-    - stage: molecule create & converge & verify
-      before_script:
-        - virtualenv --no-site-packages --python=$(which python2.7) envmolecule-${MOLECULE_SCENARIO}
-        - source envmolecule-${MOLECULE_SCENARIO}/bin/activate
-        - pip install -r requirements.txt
-        - sudo apt-get -qq update
-      script:
-        - molecule create --scenario-name ${MOLECULE_SCENARIO}
-        - molecule converge --scenario-name ${MOLECULE_SCENARIO}
-        # - molecule idempotence
-        - molecule verify --scenario-name ${MOLECULE_SCENARIO}
-    - stage: molecule syntax
-      script:
-        - molecule syntax --scenario-name ${MOLECULE_SCENARIO}
-    - stage: molecule destroy
+    # - stage: molecule create & converge & verify
+    #   before_script:
+    #     - virtualenv --no-site-packages --python=$(which python2.7) envmolecule-${MOLECULE_SCENARIO}
+    #     - source envmolecule-${MOLECULE_SCENARIO}/bin/activate
+    #     - pip install -r requirements.txt
+    #     - sudo apt-get -qq update
+    #   script:
+    #     - molecule create --scenario-name ${MOLECULE_SCENARIO}
+    #     - molecule converge --scenario-name ${MOLECULE_SCENARIO}
+    #     # - molecule idempotence
+    #     - molecule verify --scenario-name ${MOLECULE_SCENARIO}
+    # - stage: molecule syntax
+    #   script:
+    #     - molecule syntax --scenario-name ${MOLECULE_SCENARIO}
+    # - stage: molecule destroy
       script:
         - molecule destroy --scenario-name ${MOLECULE_SCENARIO}
 notifications:
