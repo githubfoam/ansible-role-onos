@@ -20,5 +20,4 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 ])
 def test_pkg(host, pkg):
     package = host.package(pkg)
-
     assert package.is_installed
