@@ -14,7 +14,17 @@ install:
   - source .venv/bin/activate
   - pip install -r requirements.txt
 script:
-  - molecule test --scenario-name ${MOLECULE_SCENARIO}
+  # - molecule test --scenario-name ${MOLECULE_SCENARIO}
+  - molecule lint --scenario-name ${MOLECULE_SCENARIO}
+  - molecule destroy --scenario-name ${MOLECULE_SCENARIO}
+  - molecule dependency --scenario-name ${MOLECULE_SCENARIO}
+  - molecule syntax --scenario-name ${MOLECULE_SCENARIO}
+  - molecule create --scenario-name ${MOLECULE_SCENARIO}
+  - molecule prepare --scenario-name ${MOLECULE_SCENARIO}
+  - molecule converge --scenario-name ${MOLECULE_SCENARIO}
+  - molecule side_effect --scenario-name ${MOLECULE_SCENARIO}
+  - molecule verify --scenario-name ${MOLECULE_SCENARIO}
+  - molecule destroy --scenario-name ${MOLECULE_SCENARIO}
 notifications:
   email:
     on_success: never
