@@ -1,6 +1,6 @@
 import pytest
 
-testinfra_hosts = ["ubuntu1604"]
+testinfra_hosts = ["xenial"]
 
 @pytest.mark.parametrize('pkg', [
   'software-properties-common',
