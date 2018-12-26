@@ -38,7 +38,8 @@ scenario:
   name: ubuntu
 verifier:
   name: testinfra
-  directory: ../../tests/
+  # directory: ../../tests/
+  directory: /tests/
   options:
     verbose: true
   lint:
