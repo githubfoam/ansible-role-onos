@@ -8,8 +8,18 @@ lint:
 platforms:
   - name: bionic
     image: ubuntu:bionic
+    capabilities:
+      - SYS_ADMIN
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
   - name: xenial
     image: ubuntu:xenial
+    capabilities:
+      - SYS_ADMIN
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
 provisioner:
   name: ansible
   playbooks:
