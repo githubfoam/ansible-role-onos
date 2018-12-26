@@ -29,9 +29,9 @@ services:
 jobs:
   include:
     - stage: molecule ubuntu1604 ubuntu1804
-      install:
+      before_install:
         - sudo apt-get -qq update
-      before_script:
+      install:
         - virtualenv --python=$(which python2.7) .venv
         - source .venv/bin/activate
         - pip install -r requirements.txt
