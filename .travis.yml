@@ -8,49 +8,24 @@ env:
   - MOLECULE_SCENARIO=ubuntu1804
 services:
   - docker
-# before_install:
-#   - sudo apt-get -qq update
-# install:
-#   - virtualenv --python=$(which python2.7) .venv
-#   - source .venv/bin/activate
-#   - pip install -r requirements.txt
-# script:
-#   # - molecule test --scenario-name ${MOLECULE_SCENARIO}
-#   - molecule lint --scenario-name ${MOLECULE_SCENARIO}
-#   - molecule destroy --scenario-name ${MOLECULE_SCENARIO}
-#   - molecule dependency --scenario-name ${MOLECULE_SCENARIO}
-#   - molecule syntax --scenario-name ${MOLECULE_SCENARIO}
-#   - molecule create --scenario-name ${MOLECULE_SCENARIO}
-#   - molecule prepare --scenario-name ${MOLECULE_SCENARIO}
-#   - molecule converge --scenario-name ${MOLECULE_SCENARIO}
-#   - molecule side-effect --scenario-name ${MOLECULE_SCENARIO}
-#   - molecule verify --scenario-name ${MOLECULE_SCENARIO}
-#   - molecule destroy --scenario-name ${MOLECULE_SCENARIO}
-jobs:
-  include:
-    - stage: molecule ubuntu1604 ubuntu1804
-      # before_install:
-      #   - sudo apt-get -qq update
-      # install:
-      #   - virtualenv --python=$(which python2.7) .venv
-      #   - source .venv/bin/activate
-      #   - pip install -r requirements.txt
-      script:
-#   # - molecule test --scenario-name ${MOLECULE_SCENARIO}
-      - sudo apt-get -qq update
-      - virtualenv --python=$(which python2.7) .venv
-      - source .venv/bin/activate
-      - pip install -r requirements.txt
-      - molecule lint --scenario-name ${MOLECULE_SCENARIO}
-      - molecule destroy --scenario-name ${MOLECULE_SCENARIO}
-      - molecule dependency --scenario-name ${MOLECULE_SCENARIO}
-      - molecule syntax --scenario-name ${MOLECULE_SCENARIO}
-      - molecule create --scenario-name ${MOLECULE_SCENARIO}
-      - molecule prepare --scenario-name ${MOLECULE_SCENARIO}
-      - molecule converge --scenario-name ${MOLECULE_SCENARIO}
-      - molecule side-effect --scenario-name ${MOLECULE_SCENARIO}
-      - molecule verify --scenario-name ${MOLECULE_SCENARIO}
-      - molecule destroy --scenario-name ${MOLECULE_SCENARIO}
+before_install:
+  - sudo apt-get -qq update
+install:
+  - virtualenv --python=$(which python2.7) .venv
+  - source .venv/bin/activate
+  - pip install -r requirements.txt
+script:
+  # - molecule test --scenario-name ${MOLECULE_SCENARIO}
+  - molecule lint --scenario-name ${MOLECULE_SCENARIO}
+  - molecule destroy --scenario-name ${MOLECULE_SCENARIO}
+  - molecule dependency --scenario-name ${MOLECULE_SCENARIO}
+  - molecule syntax --scenario-name ${MOLECULE_SCENARIO}
+  - molecule create --scenario-name ${MOLECULE_SCENARIO}
+  - molecule prepare --scenario-name ${MOLECULE_SCENARIO}
+  - molecule converge --scenario-name ${MOLECULE_SCENARIO}
+  - molecule side-effect --scenario-name ${MOLECULE_SCENARIO}
+  - molecule verify --scenario-name ${MOLECULE_SCENARIO}
+  - molecule destroy --scenario-name ${MOLECULE_SCENARIO}
 notifications:
   email:
     on_success: never
