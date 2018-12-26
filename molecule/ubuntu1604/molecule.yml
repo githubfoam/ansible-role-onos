@@ -10,7 +10,7 @@ platforms:
     image: ubuntu:16.04
     groups:
       - DebianGrp
-    # command: /sbin/init
+    command: /sbin/init
     capabilities:
       - SYS_ADMIN
     volumes:
