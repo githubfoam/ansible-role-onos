@@ -20,10 +20,10 @@ jobs:
         - source envmolecule-${MOLECULE_SCENARIO}/bin/activate
         - pip install -r requirements.txt
       script:
-        - molecule lint --scenario-name ${MOLECULE_SCENARIO}
-    - stage: molecule destroy
-      script:
         - molecule destroy --scenario-name ${MOLECULE_SCENARIO}
+    # - stage: molecule destroy
+    #   script:
+    #     - molecule destroy --scenario-name ${MOLECULE_SCENARIO}
     - stage: molecule create
       script:
         - molecule create --scenario-name ${MOLECULE_SCENARIO}
