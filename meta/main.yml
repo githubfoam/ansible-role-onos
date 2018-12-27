@@ -9,7 +9,10 @@ galaxy_info:
   platforms:
     - name: Ubuntu
       versions:
+        - xenial
         - bionic
+        - cosmic
+        - disco
   galaxy_tags:
     - controlplane
     - sdn
