@@ -29,7 +29,6 @@ services:
 before_install:
   - sudo apt-get -qq update
 install:
-  # - virtualenv --python=$(which python2.7) envmolecule
   - virtualenv --python=python$PYTHON_VERSION envmolecule
   # - virtualenv --python=$(which python3.6) envmolecule
   - source envmolecule/bin/activate
