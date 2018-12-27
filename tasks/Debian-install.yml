@@ -36,6 +36,7 @@
   command: cp /tmp/init/onos.initd /etc/init.d/onos
 - name: Additional steps for Systemd based systems  Ubuntu 16, CentOS 7+
   command: cp /tmp/init/onos.service /etc/systemd/system/
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '16.04'
 - name: Running systemctl daemon-reload
   command: systemctl daemon-reload
 - name: Additional steps for Upstart based systems

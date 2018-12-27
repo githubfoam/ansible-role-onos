@@ -30,7 +30,6 @@ scenario:
   name: ubuntu1804
 verifier:
   name: testinfra
-  directory: /tests/
   options:
     verbose: true
   lint:
