@@ -39,6 +39,7 @@
   when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '16.04'
 - name: Running systemctl daemon-reload
   command: systemctl daemon-reload
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '16.04'
 - name: Additional steps for Upstart based systems
   service:
     name: onos
