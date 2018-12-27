@@ -26,7 +26,7 @@ provisioner:
   lint:
     name: ansible-lint
 scenario:
-  name: sc1-centos76
+  name: centos76
 verifier:
   name: testinfra
   options:
