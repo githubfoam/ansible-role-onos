@@ -9,6 +9,7 @@ env:
   - MOLECULE_SCENARIO=ubuntu1804
   - MOLECULE_SCENARIO=ubuntu1810
   - MOLECULE_SCENARIO=ubuntu1904
+  - MOLECULE_SCENARIO=sc1-centos76
 services:
   - docker
 before_install:
