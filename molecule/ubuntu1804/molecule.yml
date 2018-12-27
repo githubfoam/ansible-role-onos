@@ -8,7 +8,7 @@ lint:
 platforms:
   - name: bionic
     image: ubuntu:bionic
-    command: /sbin/init
+    # command: /sbin/init
     capabilities:
       - SYS_ADMIN
     volumes:
