@@ -19,19 +19,19 @@ language: python
 #       - MOLECULE_SCENARIO=ubuntu1804
 #       - MOLECULE_SCENARIO=ubuntu1810
 #       - MOLECULE_SCENARIO=ubuntu1904
-matrix:
-  include:
-  - PYTHON_VERSION=3.6
-    MOLECULE_SCENARIO=ubuntu1604
-  - PYTHON_VERSION=3.6
-    MOLECULE_SCENARIO=ubuntu1804
+# matrix:
+#   include:
+#   - PYTHON_VERSION=3.6
+#     MOLECULE_SCENARIO=ubuntu1604
+#   - PYTHON_VERSION=3.6
+#     MOLECULE_SCENARIO=ubuntu1804
 services:
   - docker
 before_install:
   - sudo apt-get -qq update
 install:
-  - virtualenv --python=python$PYTHON_VERSION envmolecule
-  # - virtualenv --python=$(which python3.6) envmolecule
+  # - virtualenv --python=python$PYTHON_VERSION envmolecule
+  - virtualenv --python=$(which python2.7) envmolecule
   - source envmolecule/bin/activate
   - pip install -r requirements.txt
 script:
