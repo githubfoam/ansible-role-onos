@@ -7,7 +7,7 @@ Ansible Role: [![Ansible Role](https://img.shields.io/ansible/role/32881.svg)](h
 Travis (.com) branch:
 [![Build Status](https://travis-ci.com/githubfoam/ansible-role-onos.svg?branch=badges)](https://travis-ci.com/githubfoam/ansible-role-onos)  
 Travis (.com) molecule testinfra branch:
-[![Build Status](https://travis-ci.com/githubfoam/ansible-role-onos.svg?branch=molecule-testinfra)](https://img.shields.io/travis/com/githubfoam/ansible-role-onos/molecule-testinfra.svg?style=plastic)  
+[![Build Status](https://travis-ci.com/githubfoam/ansible-role-onos.svg?branch=molecule-testinfra)](https://travis-ci.com/githubfoam/ansible-role-onos)
 Travis (.com) test branch:
 [![Build Status](https://travis-ci.com/githubfoam/ansible-role-onos.svg?branch=test)](https://travis-ci.com/githubfoam/ansible-role-onos)  
 Travis (.com) dev branch:
@@ -26,7 +26,11 @@ Travis (.com) dev branch:
 Playbook
 ----------------
 
+Distros:
 
+    - MOLECULE_SCENARIO=ubuntu1604
+    - MOLECULE_SCENARIO=ubuntu1804
+    - MOLECULE_SCENARIO=ubuntu1810
 File:
 
     - hosts: servers
