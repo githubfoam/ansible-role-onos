@@ -10,6 +10,8 @@ env:
   # - MOLECULE_SCENARIO=ubuntu1810
   # - MOLECULE_SCENARIO=ubuntu1904
   - MOLECULE_SCENARIO=centos76
+  - MOLECULE_SCENARIO=centos74
+  - MOLECULE_SCENARIO=fedora29
 services:
   - docker
 before_install:
