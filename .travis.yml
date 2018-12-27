@@ -8,16 +8,22 @@ language: python
 #   - MOLECULE_SCENARIO=ubuntu1804
 #   - MOLECULE_SCENARIO=ubuntu1810
 #   - MOLECULE_SCENARIO=ubuntu1904
+# matrix:
+#   include:
+#     python:
+#       - PYTHON_VERSION=2.7
+#       - PYTHON_VERSION=3.6
+#     env:
+#       - MOLECULE_SCENARIO=ubuntu1604
+#       - MOLECULE_SCENARIO=ubuntu1804
+#       - MOLECULE_SCENARIO=ubuntu1810
+#       - MOLECULE_SCENARIO=ubuntu1904
 matrix:
   include:
-    python:
-      - PYTHON_VERSION=2.7
-      - PYTHON_VERSION=3.6
-    env:
-      - MOLECULE_SCENARIO=ubuntu1604
-      - MOLECULE_SCENARIO=ubuntu1804
-      - MOLECULE_SCENARIO=ubuntu1810
-      - MOLECULE_SCENARIO=ubuntu1904
+  - PYTHON_VERSION=2.7
+    MOLECULE_SCENARIO=ubuntu1604
+  - PYTHON_VERSION=2.7
+    MOLECULE_SCENARIO=ubuntu1804
 services:
   - docker
 before_install:
