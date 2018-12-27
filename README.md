@@ -27,7 +27,13 @@ Travis (.com) dev branch:
 Playbook
 ----------------
 
+molecule testinfra branch:
 
+    - MOLECULE_SCENARIO=ubuntu1604
+    - MOLECULE_SCENARIO=ubuntu1804
+    - MOLECULE_SCENARIO=ubuntu1810
+    - MOLECULE_SCENARIO=ubuntu1904
+    
 File:
 
     - hosts: servers
