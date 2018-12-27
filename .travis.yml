@@ -21,9 +21,9 @@ language: python
 #       - MOLECULE_SCENARIO=ubuntu1904
 matrix:
   include:
-  - PYTHON_VERSION=2.7
+  - PYTHON_VERSION=3.6
     MOLECULE_SCENARIO=ubuntu1604
-  - PYTHON_VERSION=2.7
+  - PYTHON_VERSION=3.6
     MOLECULE_SCENARIO=ubuntu1804
 services:
   - docker
