@@ -6,23 +6,50 @@
   apt:
     name: software-properties-common
     update_cache: yes
-- name: Add Oracle Java 1.8 repos
-  command: add-apt-repository ppa:webupd8team/java
-- name: Run the equivalent of "apt-get update" as a separate step
+
+- name: "Add Oracle Java 13 repos"
+  command: add-apt-repository ppa:linuxuprising/java
+
+- name: "Run the equivalent of apt-get update as a separate step"
   apt:
     update_cache: yes
-- name: Execute the command in remote shell; Install Oracle Java 1.8
-  shell: echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
-- name: Install Oracle Java 1.8
+
+- name: "Execute the command in remote shell; Install Oracle Java 13"
+  shell: echo "oracle-java13-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
+
+- name: "Install Oracle Java 13"
   apt:
     name: "{{ packages }}"
   vars:
         packages:
-        - oracle-java8-installer
-        - oracle-java8-set-default
+        - oracle-java13-installer
+        - oracle-java13-set-default
         - curl
-        state: latest
+        state: present
         autoclean: yes
+
+
+# - name: Add Oracle Java 1.8 repos
+#   command: add-apt-repository ppa:webupd8team/java
+#
+# - name: Run the equivalent of "apt-get update" as a separate step
+#   apt:
+#     update_cache: yes
+#
+# - name: Execute the command in remote shell; Install Oracle Java 1.8
+#   shell: echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
+#
+# - name: Install Oracle Java 1.8
+#   apt:
+#     name: "{{ packages }}"
+#   vars:
+#         packages:
+#         - oracle-java8-installer
+#         - oracle-java8-set-default
+#         - curl
+#         state: latest
+#         autoclean: yes
+
 - name: Unarchive a file that needs to be downloaded (added in 2.0)
   unarchive:
         src: http://repo1.maven.org/maven2/org/onosproject/onos-releases/onos-1.12.0/onos-1.12.0.tar.gz
