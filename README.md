@@ -22,6 +22,7 @@ Travis (.com) dev branch:
 [![GitHub search hit counter](https://img.shields.io/github/search/githubfoam/ansible-role-onos/goto.svg)](https://github.com/githubfoam/ansible-role-onos)  
 [![GitHub](https://img.shields.io/github/license/githubfoam/ansible-role-onos.svg?style=plastic)](https://github.com/githubfoam/ansible-role-onos)
 
+~~~~
 ----------------
 
 Playbook
@@ -54,3 +55,17 @@ Author Information
 ------------------
 
 An optional section for the role authors
+
+release watch
+~~~~
+
+java watch
+~~~~
+Installation of the JDK on Linux Platforms
+https://docs.oracle.com/en/java/javase/13/install/installation-jdk-linux-platforms.html#GUID-737A84E4-2EFF-4D38-8E60-3E29D1B884B8
+
+Oracle JDK 13 Certified System Configurations
+Ubuntu Linux  19.04  	18.04 LTS
+https://www.oracle.com/technetwork/java/javase/documentation/jdk13certconfig-5567436.html
+
+~~~~
