@@ -1,32 +1,42 @@
 ---
 # tasks file for apache
-- name: Update apt cache.
+- name: "Update apt cache"
   apt: update_cache=yes
-- name: Update repositories cache and install `software-properties-common` package
+
+- name: "Update repositories cache and install software-properties-common package"
   apt:
     name: software-properties-common
     update_cache: yes
 
-- name: "Add Oracle Java 13 repos"
-  command: add-apt-repository ppa:linuxuprising/java
-
-- name: "Run the equivalent of apt-get update as a separate step"
+- name: "Update repositories cache and install default jdk package"
   apt:
+    name: default-jdk
     update_cache: yes
 
-- name: "Execute the command in remote shell; Install Oracle Java 13"
-  shell: echo "oracle-java13-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
 
-- name: "Install Oracle Java 13"
-  apt:
-    name: "{{ packages }}"
-  vars:
-        packages:
-        - oracle-java13-installer
-        - oracle-java13-set-default
-        - curl
-        state: present
-        autoclean: yes
+# - name: "Run the equivalent of apt-get update as a separate step"
+#   apt:
+#     update_cache: yes
+# - name: "Add Oracle Java 13 repos"
+#   command: add-apt-repository ppa:linuxuprising/java
+#
+# - name: "Run the equivalent of apt-get update as a separate step"
+#   apt:
+#     update_cache: yes
+#
+# - name: "Execute the command in remote shell; Install Oracle Java 13"
+#   shell: echo "oracle-java13-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
+#
+# - name: "Install Oracle Java 13"
+#   apt:
+#     name: "{{ packages }}"
+#   vars:
+#         packages:
+#         - oracle-java13-installer
+#         - oracle-java13-set-default
+#         - curl
+#         state: present
+#         autoclean: yes
 
 
 # - name: Add Oracle Java 1.8 repos
