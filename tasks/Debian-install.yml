@@ -7,7 +7,7 @@
   apt:
     name: software-properties-common
     update_cache: yes
-# default jdk - openJDK
+# default jdk - openJDK - working
 # - name: "Update repositories cache and install default jdk package"
 #   apt:
 #     name: default-jdk
