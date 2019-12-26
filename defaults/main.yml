@@ -4,3 +4,11 @@
 firewall_disable_firewalld: false
 # Debian
 firewall_disable_ufw: false
+# oracle java 13
+oracle_java_apt_repository: 'ppa:linuxuprising/java'
+oracle_java_deb_package: 'oracle-java13-installer'
+oracle_java_license_version: 'shared/accepted-oracle-license-v1-2'
+oracle_java_cache_valid_time: 3600
+oracle_java_state: latest
+oracle_java_debconf_package_default: 'oracle-java13-set-default'
+oracle_java_apt_repository_key: "73C3DB2A"

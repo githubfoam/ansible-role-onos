@@ -7,11 +7,39 @@
   apt:
     name: software-properties-common
     update_cache: yes
+# default jdk - openJDK
+# - name: "Update repositories cache and install default jdk package"
+#   apt:
+#     name: default-jdk
+#     update_cache: yes
 
-- name: "Update repositories cache and install default jdk package"
+# oracle java 13
+- name: "debian | ensure the apt repository key is present"
+  apt_key:
+    id="{{ oracle_java_apt_repository_key }}"
+    keyserver=keyserver.ubuntu.com
+    state=present
+- name: "debian | ensure the apt repository is present"
+  apt_repository:
+    repo="{{ oracle_java_apt_repository }}"
+    update_cache=yes
+    state=present
+- name: "debian | set license as accepted"
+  debconf:
+    name="{{ oracle_java_deb_package }}"
+    question="{{ oracle_java_license_version }}"
+    value='true'
+    vtype='select'
+- name: "debian | ensure Java is installed"
   apt:
-    name: default-jdk
-    update_cache: yes
+    name="{{ oracle_java_deb_package }}"
+    state={{ oracle_java_state }}
+    cache_valid_time={{ oracle_java_cache_valid_time }}
+    update_cache=yes
+- name: "debian | set Java version as default"
+  apt:
+    name="{{ oracle_java_debconf_package_default }}"
+    state=present
 
 - name: Unarchive a file that needs to be downloaded (added in 2.0)
   unarchive:
